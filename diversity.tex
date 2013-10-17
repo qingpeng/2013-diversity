@@ -91,14 +91,6 @@
 
 \section*{Abstract}
 
-
-
-% Please keep the Author Summary between 150 and 200 words
-% Use first person. PLoS ONE authors please skip this step. 
-% Author Summary not valid for PLoS ONE submissions.   
-\section*{Author Summary}
-
-\section*{Introduction}
 Comparison of metagenomics samples
 \\
 Coverage estimation of metagenomics reads
@@ -106,6 +98,14 @@ Coverage estimation of metagenomics reads
 Diversity evaluation of metagenomics samples
 
 reference-free, assembly-free annotation-free, binning-free
+
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLoS ONE authors please skip this step. 
+% Author Summary not valid for PLoS ONE submissions.   
+%\section*{Author Summary}
+
+\section*{Introduction}
 
 % Results and Discussion can be combined.
 \section*{Results}
@@ -127,11 +127,19 @@ But there should be a way to figure out the relationship.
 \\
 with 1X coverage, 50\% of real coverage.
 
+1x coverage , 63\% of genome is covered
+
 \\next to do:
 \\
 1. figure out the relationship between coverage and overlap accuracy
 \\
 2. synthetic data with real bacterial genomes.
+\\
+
+
+two experiments to do 
+\\
+figure out the ecology of this two levels of diversity difference
 \\
 3. 
 
@@ -145,7 +153,7 @@ with 1X coverage, 50\% of real coverage.
 
 \subsection*{Code and data set availability}
 
-\subsection*{synthetic data}
+\subsection*{synthetic data Try 1}
 We built 4 series of synthetic data sets:\\
 Each series include four sampels with specific composition:\\
 SampleA: 100 species with 80 common to B\\
@@ -167,6 +175,49 @@ SampleD: 100 species with 20 common to A/B, and 60 common to D\\
 %The iPython\cite{4160251} notebook file and data analysis to generate the figures are also
 %available in that github repository. 
 
+
+\subsection*{synthetic data Try 2}
+
+We built 3 series of synthetic data sets:
+\\
+10 species\\
+\\
+Sample1A:\\
+species IDs:\\
+1,2,3,4,5,6,7,8,9,10\\
+relative abundance:\\
+20:18:16:4:3:2:2:2:2:2\\
+\\
+Sample1B:\\
+species IDs:\\
+1,2,3,14,15,16,17,18,19,20\\
+relative abundance:\\
+20:18:16:4:3:2:2:2:2:2\\
+\\
+Sample1C:\\
+species IDs:\\
+21,22,3,4,5,6,7,8,9,10\\
+relative abundance:\\
+2:2:2:2:2:3:4:16:18:20\\
+
+A and B high overlap on individual level, low overlap on species level\\
+A and C high overlap on species level, low overlap on individual level\\
+B and C low overlap on species level and low overlap on individual level\\
+
+\\
+With error\\
+And without error\\
+\\
+1X  10:9:8:2:1.5:1:1:1:1:1\\
+\\
+And \\
+\\
+6X 60:54:48:12:9:6:6:6:6:6\\
+
+
+Relative abundance matters.\\
+We may do diginorm to eliminate the relative abundance firstly then use this method to
+ evaluate richness...
 
 %\section*{References}
 % The bibtex filename
@@ -192,8 +243,14 @@ SampleD: 100 species with 20 common to A/B, and 60 common to D\\
 % @CTB explain why different runs
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=8in]{./figure/figure1}}
-\caption{\bf \% of reads in sampleX are covered in sampleY }
+\caption{\bf Test 1 \% of reads in sampleX are covered in sampleY }
 \label{fig:figure1}
+\end{figure}
+
+\begin{figure}[!ht]
+\centerline{\includegraphics[width=8in]{./figure/figure2}}
+\caption{\bf Test 2 \% of reads in sampleX are covered in sampleY }
+\label{fig:figure2}
 \end{figure}
 
 

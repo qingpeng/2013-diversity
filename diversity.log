@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.9.12)  3 OCT 2013 12:57
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.9.12)  14 OCT 2013 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,53 +239,112 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.130 \\n
+l.132 \\n
          ext to do:
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--155
+Underfull \hbox (badness 10000) in paragraph at lines 132--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--169
+Underfull \hbox (badness 10000) in paragraph at lines 157--163
 
  []
 
 [1{/usr/local/texlive/2012basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 164--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 W
+       ith error\\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--216
+
+ []
+
 <./figure/figure1.png, id=9, 728.7225pt x 679.53876pt>
 File: ./figure/figure1.png Graphic file (type png)
 
 <use ./figure/figure1.png>
-Package pdftex.def Info: ./figure/figure1.png used on input line 194.
+Package pdftex.def Info: ./figure/figure1.png used on input line 245.
 (pdftex.def)             Requested size: 578.15999pt x 539.16275pt.
  [2]
+<./figure/figure2.png, id=13, 867.24pt x 748.7975pt>
+File: ./figure/figure2.png Graphic file (type png)
 
-LaTeX Warning: Text page 3 contains only floats.
-
-[3 <./figure/figure1.png>] (./diversity.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+<use ./figure/figure2.png>
+Package pdftex.def Info: ./figure/figure2.png used on input line 251.
+(pdftex.def)             Requested size: 578.15999pt x 499.22377pt.
+ [3 <./figure/figure1.png>] [4 <./figure/figure2.png>] (./diversity.aux) ) 
 Here is how much of TeX's memory you used:
- 3464 strings out of 494578
- 51154 string characters out of 3168574
- 106591 words of memory out of 3000000
- 6666 multiletter control sequences out of 15000+200000
+ 3470 strings out of 494578
+ 51277 string characters out of 3168574
+ 106599 words of memory out of 3000000
+ 6671 multiletter control sequences out of 15000+200000
  5511 words of font info for 20 fonts, out of 3000000 for 9000
  314 hyphenation exceptions out of 8191
  38i,6n,38p,235b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb></usr/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb>
-Output written on diversity.pdf (3 pages, 80153 bytes).
+</usr
+/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
+fb></usr/local/texlive/2012basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb>
+Output written on diversity.pdf (4 pages, 117969 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
