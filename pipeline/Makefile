@@ -1,5 +1,5 @@
 KHMER=/home/qingpeng/python/khmer
-PAPER=/home/qingpeng/Dropbox/Work/Manuscript/2013-diversity/
+PAPER=/home/qingpeng/Dropbox/Work/Manuscript/2013-diversity
 
 # run this Makefile in ./data directory
 # make -f
@@ -24,9 +24,15 @@ clean:
 random_genome_220.fna:
 	python ${PAPER}/pipeline/simulate_random_genomes.py
 
-220_random_genomes.fna.tar.gz: random_genome_001.fna random_genome_220.fna
+220_random_genomes.fna.tar.gz: random_genome_220.fna
 	tar -zcvf 220_random_genomes.fna.tar.gz random_genome_*
 
+
+
+
+saturation_1021: evenness_1-Empirical.fna.gz.C1.report evenness_10-Empirical.fna.gz.C1.report evenness_40-Empirical.fna.gz.C1.report evenness_1_10_40-Empirical.fna.gz.C1.report evenness_5-Empirical.fna.gz.C1.report evenness_20-Empirical.fna.gz.C1.report evenness_1_5_10_20_40-Empirical.fna.gz.C1.report evenness_12345-Empirical.fna.gz.C1.report evenness_124816-Empirical.fna.gz.C1.report
+saturation_1021_copy:
+	cp evenness_*-Empirical.fna.gz.C1.report ${PAPER}/data/
 #1017
 evenness_1017: evenness_1-Empirical.fna.gz.hist evenness_10-Empirical.fna.gz.hist evenness_40-Empirical.fna.gz.hist evenness_1_10_40-Empirical.fna.gz.hist evenness_5-Empirical.fna.gz.hist evenness_20-Empirical.fna.gz.hist evenness_1_5_10_20_40-Empirical.fna.gz.hist evenness_12345-Empirical.fna.gz.hist evenness_124816-Empirical.fna.gz.hist
 
@@ -50,39 +56,17 @@ evenness_12345-Empirical.fna.gz: ${PAPER}/pipeline/evenness_12345.mprf
 evenness_124816-Empirical.fna.gz: ${PAPER}/pipeline/evenness_124816.mprf
 	MetaSim cmd -mg ${PAPER}/pipeline/errormodel-80bp.mconf -r 387500 --threads 2 -z -s $<
 
-
 %.hist: %.ht % 
 	python ${KHMER}/sandbox/calc-median-distribution.py $^ $@
 
 %.ht: %
 	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 $@ $<
-# 
-# evenness_1-Empirical.fna.gz.ht: evenness_1-Empirical.fna.gz
-# 	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 evenness_1-Empirical.fna.gz.ht evenness_1-Empirical.fna.gz
-# 
-# evenness_1-Empirical.fna.gz.hist: evenness_1-Empirical.fna.gz evenness_1-Empirical.fna.gz.ht
-# 	python ${KHMER}/sandbox/calc-median-distribution.py evenness_1-Empirical.fna.gz.ht evenness_1-Empirical.fna.gz evenness_1-Empirical.fna.gz.hist
-# 
-# evenness_10-Empirical.fna.gz.ht: evenness_10-Empirical.fna.gz
-# 	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 evenness_10-Empirical.fna.gz.ht evenness_10-Empirical.fna.gz
-# 
-# evenness_10-Empirical.fna.gz.hist: evenness_10-Empirical.fna.gz evenness_10-Empirical.fna.gz.ht
-# 	python ${KHMER}/sandbox/calc-median-distribution.py evenness_10-Empirical.fna.gz.ht evenness_10-Empirical.fna.gz evenness_10-Empirical.fna.gz.hist
-# 
-# evenness_40-Empirical.fna.gz.ht: evenness_40-Empirical.fna.gz
-# 	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 evenness_40-Empirical.fna.gz.ht evenness_40-Empirical.fna.gz
-# 
-# evenness_40-Empirical.fna.gz.hist: evenness_40-Empirical.fna.gz evenness_40-Empirical.fna.gz.ht
-# 	python ${KHMER}/sandbox/calc-median-distribution.py evenness_40-Empirical.fna.gz.ht evenness_40-Empirical.fna.gz evenness_40-Empirical.fna.gz.hist
-# 
-# evenness_1_10_40-Empirical.fna.gz.ht: evenness_1_10_40-Empirical.fna.gz
-# 	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 evenness_1_10_40-Empirical.fna.gz.ht evenness_1_10_40-Empirical.fna.gz
-# 
-# evenness_1_10_40-Empirical.fna.gz.hist: evenness_1_10_40-Empirical.fna.gz evenness_1_10_40-Empirical.fna.gz.ht
-# 	python ${KHMER}/sandbox/calc-median-distribution.py evenness_1_10_40-Empirical.fna.gz.ht evenness_1_10_40-Empirical.fna.gz evenness_1_10_40-Empirical.fna.gz.hist
-# 
 
-
+%.C1.report: %
+	python ${PAPER}/pipeline/normalize-by-median.py -C 1 -k 22 -N 4 -x 1e9  $<  -R $@
+	
+	
+	
 overlap:
 	MetaSim cmd -mg ${PAPER}/pipeline/errormodel-80bp.mconf -r 1250000 --threads 2 -z -s ~/Dropbox/Work/Manuscript/2013-diversity/pipeline/sampleA.mprf
 	MetaSim cmd -mg ${PAPER}/pipeline/errormodel-80bp.mconf -r 1250000 --threads 2 -z -s ~/Dropbox/Work/Manuscript/2013-diversity/pipeline/sampleB.mprf
