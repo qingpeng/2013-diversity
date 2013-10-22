@@ -28,6 +28,46 @@ random_genome_220.fna:
 	tar -zcvf 220_random_genomes.fna.tar.gz random_genome_*
 
 
+normalize_overlap_1020: 1A21B.sweep6X.keep.Empirical 1A21C.sweep6X.keep.Empirical 1B21A.sweep6X.keep.Empirical 1B21C.sweep6X.keep.Empirical 1C21A.sweep6X.keep.Empirical 1C21B.sweep6X.keep.Empirical 1A21B.sweep6X.keep.Exact 1A21C.sweep6X.keep.Exact 1B21A.sweep6X.keep.Exact 1B21C.sweep6X.keep.Exact 1C21A.sweep6X.keep.Exact 1C21B.sweep6X.keep.Exact
+
+1A21B.sweep6X.keep.Empirical: sample1A-Empirical-6X.fna.gz.keep sample1B-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1A21C.sweep6X.keep.Empirical: sample1A-Empirical-6X.fna.gz.keep sample1C-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+	
+1B21A.sweep6X.keep.Empirical: sample1B-Empirical-6X.fna.gz.keep sample1A-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1B21C.sweep6X.keep.Empirical: sample1B-Empirical-6X.fna.gz.keep sample1C-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1C21A.sweep6X.keep.Empirical: sample1C-Empirical-6X.fna.gz.keep sample1A-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1C21B.sweep6X.keep.Empirical: sample1C-Empirical-6X.fna.gz.keep sample1B-Empirical-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1A21B.sweep6X.keep.Exact: sample1A-Exact-6X.fna.gz.keep sample1B-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1A21C.sweep6X.keep.Exact: sample1A-Exact-6X.fna.gz.keep sample1C-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+	
+1B21A.sweep6X.keep.Exact: sample1B-Exact-6X.fna.gz.keep sample1A-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1B21C.sweep6X.keep.Exact: sample1B-Exact-6X.fna.gz.keep sample1C-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1C21A.sweep6X.keep.Exact: sample1C-Exact-6X.fna.gz.keep sample1A-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+1C21B.sweep6X.keep.Exact: sample1C-Exact-6X.fna.gz.keep sample1B-Exact-6X.fna.gz.keep
+	python ${KHMER}/sandbox/sweep-reads2.py --ksize 22 --n_hashes 4 --hashsize 4e10 $^ > $@
+
+%.keep: %
+	python ${KHMER}/scripts/normalize-by-median.py -C 5 -k 22 -N 4 -x 1e9 $<
 
 
 saturation_1021: evenness_1-Empirical.fna.gz.C1.report evenness_10-Empirical.fna.gz.C1.report evenness_40-Empirical.fna.gz.C1.report evenness_1_10_40-Empirical.fna.gz.C1.report evenness_5-Empirical.fna.gz.C1.report evenness_20-Empirical.fna.gz.C1.report evenness_1_5_10_20_40-Empirical.fna.gz.C1.report evenness_12345-Empirical.fna.gz.C1.report evenness_124816-Empirical.fna.gz.C1.report
