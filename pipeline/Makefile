@@ -27,6 +27,9 @@ random_genome_220.fna:
 220_random_genomes.fna.tar.gz: random_genome_220.fna
 	tar -zcvf 220_random_genomes.fna.tar.gz random_genome_*
 
+get_hist_1031: sample1A-Empirical-1X.fna.gz.hist sample1A-Empirical-6X.fna.gz.hist sample1A-Exact-1X.fna.gz.hist sample1A-Exact-6X.fna.gz.hist sample1B-Empirical-1X.fna.gz.hist sample1B-Empirical-6X.fna.gz.hist sample1B-Exact-1X.fna.gz.hist sample1B-Exact-6X.fna.gz.hist sample1C-Empirical-1X.fna.gz.hist sample1C-Empirical-6X.fna.gz.hist sample1C-Exact-1X.fna.gz.hist sample1C-Exact-6X.fna.gz.hist
+
+
 
 normalize_overlap_1020: 1A21B.sweep6X.keep.Empirical 1A21C.sweep6X.keep.Empirical 1B21A.sweep6X.keep.Empirical 1B21C.sweep6X.keep.Empirical 1C21A.sweep6X.keep.Empirical 1C21B.sweep6X.keep.Empirical 1A21B.sweep6X.keep.Exact 1A21C.sweep6X.keep.Exact 1B21A.sweep6X.keep.Exact 1B21C.sweep6X.keep.Exact 1C21A.sweep6X.keep.Exact 1C21B.sweep6X.keep.Exact
 
