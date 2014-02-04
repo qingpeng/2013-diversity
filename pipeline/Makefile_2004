@@ -1,0 +1,78 @@
+KHMER=/home/qingpeng/python/khmer
+PAPER=/home/qingpeng/Dropbox/Work/Manuscript/2013-diversity
+
+# run this Makefile in ./data directory
+# make -f
+# diversity paper pipeline
+# raw data:
+
+	
+all: 
+
+copydata:
+	rm -fr ../data/
+	mkdir ../data/
+	cp jelly_*_22.hist *.time* ecoli_ref.fastq.pos*.abund1 fp_assessment.out *.wc ../data/
+
+
+clean:
+	rm -fr `cat clean-list.txt`
+
+matrix: matrix_Empirical_1X_A_B.out matrix_Empirical_1X_A_C.out matrix_Empirical_20X_A_B.out matrix_Empirical_20X_A_C.out matrix_Empirical_6X_1A_1B.out matrix_Empirical_6X_1B_1C.out matrix_Empirical_6X_1A_1C.out matrix_Empirical_6X_1A_1B_keep.out matrix_Empirical_6X_1B_1C_keep.out matrix_Empirical_6X_1A_1C_keep.out matrix_Empirical_1X_C_D.out matrix_Empirical_20X_C_D.out
+
+
+matrix_Empirical_1X_A_B.out: sampleA-Empirical-1X.fna.gz.ht sampleB-Empirical-1X.fna.gz.ht sampleA-Empirical-1X.fna.gz sampleB-Empirical-1X.fna.gz 
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_1X_A_C.out: sampleA-Empirical-1X.fna.gz.ht sampleC-Empirical-1X.fna.gz.ht sampleA-Empirical-1X.fna.gz sampleC-Empirical-1X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_1X_B_C.out: sampleB-Empirical-1X.fna.gz.ht sampleC-Empirical-1X.fna.gz.ht sampleB-Empirical-1X.fna.gz sampleC-Empirical-1X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_1X_C_D.out: sampleC-Empirical-1X.fna.gz.ht sampleD-Empirical-1X.fna.gz.ht sampleC-Empirical-1X.fna.gz sampleD-Empirical-1X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+
+matrix_Empirical_20X_A_B.out: sampleA-Empirical.fna.gz.ht sampleB-Empirical.fna.gz.ht sampleA-Empirical.fna.gz sampleB-Empirical.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_20X_A_C.out: sampleA-Empirical.fna.gz.ht sampleC-Empirical.fna.gz.ht sampleA-Empirical.fna.gz sampleC-Empirical.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_20X_B_C.out: sampleB-Empirical.fna.gz.ht sampleC-Empirical.fna.gz.ht sampleB-Empirical.fna.gz sampleC-Empirical.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_20X_C_D.out: sampleC-Empirical.fna.gz.ht sampleD-Empirical.fna.gz.ht sampleC-Empirical.fna.gz sampleD-Empirical.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+
+
+matrix_Empirical_6X_1A_1B.out: sample1A-Empirical-6X.fna.gz.ht sample1B-Empirical-6X.fna.gz.ht sample1A-Empirical-6X.fna.gz sample1B-Empirical-6X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_6X_1B_1C.out: sample1B-Empirical-6X.fna.gz.ht sample1C-Empirical-6X.fna.gz.ht sample1B-Empirical-6X.fna.gz sample1C-Empirical-6X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_6X_1A_1C.out: sample1A-Empirical-6X.fna.gz.ht sample1C-Empirical-6X.fna.gz.ht sample1A-Empirical-6X.fna.gz sample1C-Empirical-6X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_6X_1A_1B_keep.out: sample1A-Empirical-6X.fna.gz.keep.ht sample1B-Empirical-6X.fna.gz.keep.ht sample1A-Empirical-6X.fna.gz.keep sample1B-Empirical-6X.fna.gz.keep
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_6X_1B_1C_keep.out: sample1B-Empirical-6X.fna.gz.keep.ht sample1C-Empirical-6X.fna.gz.keep.ht sample1B-Empirical-6X.fna.gz.keep sample1C-Empirical-6X.fna.gz.keep
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+matrix_Empirical_6X_1A_1C_keep.out: sample1A-Empirical-6X.fna.gz.keep.ht sample1C-Empirical-6X.fna.gz.keep.ht sample1A-Empirical-6X.fna.gz.keep sample1C-Empirical-6X.fna.gz.keep
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
+
+
+
+%.ht: %
+	python ${KHMER}/scripts/load-into-counting.py --ksize 22 --n_hashes 4 --hashsize 1e9 $@ $<
+	
+	
+	
+ 
+ 
+ 

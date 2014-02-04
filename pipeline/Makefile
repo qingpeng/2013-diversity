@@ -27,10 +27,14 @@ random_genome_220.fna:
 220_random_genomes.fna.tar.gz: random_genome_220.fna
 	tar -zcvf 220_random_genomes.fna.tar.gz random_genome_*
 
+# also need to import files into database
+# to be added
+
+
 get_hist_1031: sample1A-Empirical-1X.fna.gz.hist sample1A-Empirical-6X.fna.gz.hist sample1A-Exact-1X.fna.gz.hist sample1A-Exact-6X.fna.gz.hist sample1B-Empirical-1X.fna.gz.hist sample1B-Empirical-6X.fna.gz.hist sample1B-Exact-1X.fna.gz.hist sample1B-Exact-6X.fna.gz.hist sample1C-Empirical-1X.fna.gz.hist sample1C-Empirical-6X.fna.gz.hist sample1C-Exact-1X.fna.gz.hist sample1C-Exact-6X.fna.gz.hist
 
 
-
+# .keep means normalized
 normalize_overlap_1020: 1A21B.sweep6X.keep.Empirical 1A21C.sweep6X.keep.Empirical 1B21A.sweep6X.keep.Empirical 1B21C.sweep6X.keep.Empirical 1C21A.sweep6X.keep.Empirical 1C21B.sweep6X.keep.Empirical 1A21B.sweep6X.keep.Exact 1A21C.sweep6X.keep.Exact 1B21A.sweep6X.keep.Exact 1B21C.sweep6X.keep.Exact 1C21A.sweep6X.keep.Exact 1C21B.sweep6X.keep.Exact
 
 1A21B.sweep6X.keep.Empirical: sample1A-Empirical-6X.fna.gz.keep sample1B-Empirical-6X.fna.gz.keep
@@ -73,6 +77,30 @@ normalize_overlap_1020: 1A21B.sweep6X.keep.Empirical 1A21C.sweep6X.keep.Empirica
 	python ${KHMER}/scripts/normalize-by-median.py -C 5 -k 22 -N 4 -x 1e9 $<
 
 
+
+evenness_1110: evenness_1-Exact.fna.gz.hist evenness_10-Exact.fna.gz.hist evenness_40-Exact.fna.gz.hist evenness_1_10_40-Exact.fna.gz.hist evenness_5-Exact.fna.gz.hist evenness_20-Exact.fna.gz.hist evenness_1_5_10_20_40-Exact.fna.gz.hist evenness_12345-Exact.fna.gz.hist evenness_124816-Exact.fna.gz.hist
+
+evenness_1-Exact.fna.gz: ${PAPER}/pipeline/evenness_1.mprf
+	MetaSim cmd -f 80 -t 0 -r 12500 --threads 2 -z -s $<
+evenness_10-Exact.fna.gz: ${PAPER}/pipeline/evenness_10.mprf
+	MetaSim cmd -f 80 -t 0 -r 125000 --threads 2 -z -s $<
+evenness_40-Exact.fna.gz: ${PAPER}/pipeline/evenness_40.mprf
+	MetaSim cmd -f 80 -t 0 -r 500000 --threads 2 -z -s $<
+evenness_1_10_40-Exact.fna.gz: ${PAPER}/pipeline/evenness_1_10_40.mprf
+	MetaSim cmd -f 80 -t 0 -r 637500 --threads 2 -z -s $<
+
+evenness_5-Exact.fna.gz: ${PAPER}/pipeline/evenness_5.mprf
+	MetaSim cmd -f 80 -t 0 -r 62500 --threads 2 -z -s $<
+evenness_20-Exact.fna.gz: ${PAPER}/pipeline/evenness_20.mprf
+	MetaSim cmd -f 80 -t 0 -r 250000 --threads 2 -z -s $<
+evenness_1_5_10_20_40-Exact.fna.gz: ${PAPER}/pipeline/evenness_1_5_10_20_40.mprf
+	MetaSim cmd -f 80 -t 0 -r 950000 --threads 2 -z -s $<
+evenness_12345-Exact.fna.gz: ${PAPER}/pipeline/evenness_12345.mprf
+	MetaSim cmd -f 80 -t 0 -r 187500 --threads 2 -z -s $<
+evenness_124816-Exact.fna.gz: ${PAPER}/pipeline/evenness_124816.mprf
+	MetaSim cmd -f 80 -t 0 -r 387500 --threads 2 -z -s $<
+	
+	
 saturation_1021: evenness_1-Empirical.fna.gz.C1.report evenness_10-Empirical.fna.gz.C1.report evenness_40-Empirical.fna.gz.C1.report evenness_1_10_40-Empirical.fna.gz.C1.report evenness_5-Empirical.fna.gz.C1.report evenness_20-Empirical.fna.gz.C1.report evenness_1_5_10_20_40-Empirical.fna.gz.C1.report evenness_12345-Empirical.fna.gz.C1.report evenness_124816-Empirical.fna.gz.C1.report
 saturation_1021_copy:
 	cp evenness_*-Empirical.fna.gz.C1.report ${PAPER}/data/
