@@ -20,6 +20,21 @@ clean:
 
 matrix: matrix_Empirical_1X_A_B.out matrix_Empirical_1X_A_C.out matrix_Empirical_20X_A_B.out matrix_Empirical_20X_A_C.out matrix_Empirical_6X_1A_1B.out matrix_Empirical_6X_1B_1C.out matrix_Empirical_6X_1A_1C.out matrix_Empirical_6X_1A_1B_keep.out matrix_Empirical_6X_1B_1C_keep.out matrix_Empirical_6X_1A_1C_keep.out matrix_Empirical_1X_C_D.out matrix_Empirical_20X_C_D.out
 
+comb: comb_Empirical_1X_A_B_C.out comb_Empirical_20X_A_B_C.out comb_Empirical_6X_1A_1B_1C.out comb_Empirical_6X_1A_1B_1C_keep.out
+
+comb_Empirical_1X_A_B_C.out: sampleA-Empirical-1X.fna.gz.ht sampleB-Empirical-1X.fna.gz.ht sampleC-Empirical-1X.fna.gz.ht sampleA-Empirical-1X.fna.gz sampleB-Empirical-1X.fna.gz sampleC-Empirical-1X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-comb.py $^ $@
+
+comb_Empirical_20X_A_B_C.out: sampleA-Empirical.fna.gz.ht sampleB-Empirical.fna.gz.ht sampleC-Empirical.fna.gz.ht sampleA-Empirical.fna.gz sampleB-Empirical.fna.gz sampleC-Empirical.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-comb.py $^ $@
+
+comb_Empirical_6X_1A_1B_1C.out: sample1A-Empirical-6X.fna.gz.ht sample1B-Empirical-6X.fna.gz.ht sample1C-Empirical-6X.fna.gz.ht sample1A-Empirical-6X.fna.gz sample1B-Empirical-6X.fna.gz sample1C-Empirical-6X.fna.gz
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-comb.py $^ $@
+
+comb_Empirical_6X_1A_1B_1C_keep.out: sample1A-Empirical-6X.fna.gz.keep.ht sample1B-Empirical-6X.fna.gz.keep.ht sample1C-Empirical-6X.fna.gz.keep.ht sample1A-Empirical-6X.fna.gz.keep sample1B-Empirical-6X.fna.gz.keep sample1C-Empirical-6X.fna.gz.keep
+	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-comb.py $^ $@
+
+
 
 matrix_Empirical_1X_A_B.out: sampleA-Empirical-1X.fna.gz.ht sampleB-Empirical-1X.fna.gz.ht sampleA-Empirical-1X.fna.gz sampleB-Empirical-1X.fna.gz 
 	python /home/qingpeng/Dropbox/Work/Manuscript/2014-gpgc/pipeline/calc-coverage-matrix.py $^ $@ 
