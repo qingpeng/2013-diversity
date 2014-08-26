@@ -49,8 +49,8 @@ for line in file_in_o:
     if int(IGS_abundance)>=1:
         for i in range(int(IGS_abundance)):
             IGS_count += 1
-            new_spectr = ' '.join(f2)
-            file_out2_o.write(str(IGS_count)+' '+new_spectr+'\n')
+            new_spectr = '\t'.join(f2)
+            file_out2_o.write(str(IGS_count)+'\t'+new_spectr+'\n')
             
 
 
