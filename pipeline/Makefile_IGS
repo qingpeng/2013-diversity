@@ -1,0 +1,61 @@
+
+Currently Loaded Modules:
+  1) GNU/4.4.5        3) TBB/4.1.0       5) CMake/2.8.5      7) R/2.15.1      9)  SciPy/0.13.0        11) Python/2.7.2    13) MKL/10.3
+  2) OpenMPI/1.4.3    4) Boost/1.47.0    6) MATLAB/R2014a    8) Stata/13.0    10) matplotlib/1.1.0    12) NumPy/1.8.1     14) h5py/2.1.3
+  
+  
+  
+  python ~/Dropbox/Manuscript/2013-diversity/scripts/count_spectrum_freq_multiple_files.py comb.list test.out
+  
+  python ~/Dropbox/Manuscript/2013-diversity/scripts/seperate_IGS.py sample1_ABC.freq sample1_ABC.freq.IGS_abund sample1_ABC.freq.IGS 
+
+  
+  
+  pair to pair , 
+  build ht file, run get median , to get pair -to -pair coverage
+  combine into coverage matrix
+  *.comb
+  combine *.comb files into spectrum file
+  -> IGS files, abunt and list
+  -> get matrix
+
+alpha_diversity.py -i sample1_ABC.freq.IGS.biom -o sample1_ABC.freq.IGS.biom.alpha_diversity -m chao1,observed_species
+# need to add header for OTU and sample ID
+
+module load QIIME/1.7.0
+biom convert -i sample1_ABC.freq.IGS2 -o sample1_ABC.freq.IGS.biom --table-type="OTU table"
+
+biom summarize-table -i sample1_ABC.freq.IGS.biom -o sample1_ABC.freq.IGS.biom.summary.txt
+
+# QIIME 1.7 is required.
+
+multiple_rarefactions.py -i sample1_ABC.freq.IGS.biom -m 250000 -x 2500000 -s 250000 -n 1 -o rarefied_otu_tables 
+
+multiple_rarefactions.py -i sample1_ABC.freq.IGS.biom -m 100000 -x 1100000 -s 100000 -n 1 -o rarefied_otu_tables 
+
+alpha_diversity.py -i rarefied_otu_tables/ -m chao1,observed_species -o adiv_chao1_pd/
+
+collate_alpha.py -i adiv_chao1_pd/ -o collated_alpha/
+
+make_rarefaction_plots.py -i collated_alpha/ -m sample1_ABC_Map.txt -o rare_plot
+
+
+
+V2: discard 1-0-0, 0-1-0, 0-0-1, X2, adjust
+
+the relationship between IGS based method and titus' diginorm based method???
+
+
+
+
+alpha two methods:
+1. considering other samples, get the number of IGSs with specific spectrum
+(good for comparing, same as beta diversity)
+2. do not consider other samples, more accurate, theoretically they should be similar. 
+
+two methods, to see if there is any difference.
+
+
+E.coli alpha pipeline:
+
+1. .fasta

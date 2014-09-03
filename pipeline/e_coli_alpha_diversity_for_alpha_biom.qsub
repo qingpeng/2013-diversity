@@ -1,0 +1,21 @@
+#!/bin/bash -login
+#PBS -l walltime=5:00:00,nodes=1:ppn=1,mem=10g
+#PBS -q main
+#PBS -M qingpeng@gmail.com
+#PBS -m abe
+#PBS -A ged-intel11
+
+module load QIIME/1.7.0
+
+cd $PBS_O_WORKDIR
+
+multiple_rarefactions.py -i e.coli.spectrum.IGS.alpha.biom -m 20000 -x 440000 -s 20000 -n 1 -o rarefied_otu_tables_alpha 
+
+alpha_diversity.py -i rarefied_otu_tables_alpha/ -m chao1,observed_species -o adiv_chao1_pd_alpha/
+
+collate_alpha.py -i adiv_chao1_pd_alpha/ -o collated_alpha_alpha/
+
+make_rarefaction_plots.py -i collated_alpha_alpha/ -m sample1_ABC_Map.txt -o rare_plot_alpha
+
+
+

@@ -1,0 +1,5 @@
+#SampleID	BarcodeSequence	LinkerPrimerSequence	Description	coverage	error_rate	file_name
+sampleA	A	A	e.coli_150x_0.01e_100	150x	0.01	e.coli_150x_0.01e_100.fa.comb
+sampleB	A	A	e.coli_50x_0.00e_100	50x	0.00	e.coli_50x_0.00e_100.fa.comb
+sampleC	A	A	e.coli_50x_0.01e_100	50x	0.01	e.coli_50x_0.01e_100.fa.comb
+sampleD	A	A	e.coli_50x_0.02e_100	50x	0.02	e.coli_50x_0.02e_100.fa.comb

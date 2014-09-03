@@ -1,0 +1,643 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;">
+  <title>Rarefaction Curves</title>
+<style type="text/css">
+td.data{font-size:10px;border-spacing:0px 10px;text-align:center;}
+td.headers{font-size:12px;font-weight:bold;text-align:center;}
+table{border-spacing:0px;}
+.removed{display:none;}
+.expands{cursor:pointer; cursor:hand;}
+.child1 td:first-child{padding-left: 3px;}
+</style>
+<script language="javascript" type="text/javascript">
+
+function show_hide_category(checkobject){
+    var imagetype=document.getElementById('imagetype').value;
+    img=document.getElementById(checkobject.name.replace('_raw'+imagetype,'_ave'+imagetype))
+    if (checkobject.checked==false){
+        img.style.display='none';
+    }else{
+        img.style.display='';
+    }
+}
+
+function reset_tree(){
+    var category=document.getElementById('category').value;
+    var metric=document.getElementById('metric').value;
+    var old_all_categories=document.getElementById('all_categories');
+    var imagetype=document.getElementById('imagetype').value;
+    cat_list=old_all_categories.value.split('$#!')
+    if (metric!='' && category != ''){
+    for (var i=1, il=cat_list.length; i<il; i++){
+        group=metric+category+cat_list[i]
+        main_class=metric+category
+        var exp_item=document.getElementById(group);
+        if (exp_item!=null){
+            if (exp_item.innerHTML=='\u25BC'){
+                exp_item.innerHTML='\u25B6'
+                var rows=document.getElementsByName(group);
+                for (var j=0, jl=rows.length; j<jl; j++){
+                    rows[j].style.display="none";
+                }
+            }
+            var rows=document.getElementsByName(group+'_raw'+imagetype);
+            for (var j=0, jl=rows.length; j<jl; j++){
+                if (rows[j].checked==false){
+                    rows[j].checked=true;
+                }
+            }
+        }
+    }
+}
+}
+
+function changeMetric(SelObject){
+    var category=document.getElementById('category');
+    var old_metric=document.getElementById('metric');
+    var imagetype=document.getElementById('imagetype').value;
+    var legend=document.getElementById('legend');
+    var array=document.getElementById('all_categories').value.split('$#!')
+    var plots=document.getElementById('plots');
+    plots.style.display='none'
+    reset_tree();
+    if (category.value != ''){
+        legend.style.display="";
+        cat=SelObject.value+category.value
+        data_display=document.getElementsByName(cat)
+        for (var i=0, il=data_display.length; i<il; i++){
+            data_display[i].style.display="";
+        }
+        cat=old_metric.value+category.value
+        data_hide=document.getElementsByName(cat)
+        for (var i=0, il=data_hide.length; i<il; i++){
+            data_hide[i].style.display="none";
+        }
+        data_display=document.getElementsByName(category.value)
+        for (var i=0, il=data_display.length; i<il; i++){
+            data_display[i].style.display="";
+        }
+        new_cat=SelObject.value+category.value
+        plots.innerHTML=''
+        for (var i=1, il=array.length; i<il; i++){
+            img=document.createElement('img')
+            img.setAttribute('width',"600px") 
+            img.setAttribute('id',array[i]+'_ave'+imagetype)
+            img.setAttribute('style','position:absolute;z-index:0')
+            img.setAttribute('src',"./average_plots/"+SelObject.value+array[0]+imagetype)
+            plots.appendChild(img)
+        }
+        plots.style.display=''
+    }
+    
+old_metric.value=SelObject.value;
+}
+
+function changeCategory(SelObject){
+    var old_category=document.getElementById('category');
+    var metric=document.getElementById('metric').value;
+    var imagetype=document.getElementById('imagetype').value;
+    var legend=document.getElementById('legend');
+    var plots=document.getElementById('plots');
+    var array=SelObject.value.split('$#!')
+    var old_all_categories=document.getElementById('all_categories')
+    category=array[0]
+    plots.style.display='none'
+    reset_tree();
+
+    if (metric != ''){
+        legend.style.display="";
+
+        data_display=document.getElementsByName(category)
+        for (var i=0, il=data_display.length; i<il; i++){
+            data_display[i].style.display="";
+        }
+        data_hide=document.getElementsByName(old_category.value)
+        for (var i=0, il=data_hide.length; i<il; i++){
+            data_hide[i].style.display="none";
+        }
+        cat=metric+category
+        data_display=document.getElementsByName(cat)
+        for (var i=0, il=data_display.length; i<il; i++){
+            data_display[i].style.display="";
+        }
+        cat=metric+old_category.value
+        data_hide=document.getElementsByName(cat)
+        for (var i=0, il=data_hide.length; i<il; i++){
+            data_hide[i].style.display="none";
+        }
+        cat=metric+category
+        plots.innerHTML=''
+        for (var i=1, il=array.length; i<il; i++){
+            img=document.createElement('img')
+            img.setAttribute('width',"600px") 
+            img.setAttribute('id',metric+array[i]+'_ave'+imagetype)
+            img.setAttribute('style','position:absolute;z-index:0')
+            img.setAttribute('src',"./average_plots/"+metric+array[0]+imagetype)
+            plots.appendChild(img)
+        }
+        plots.style.display=''
+    }
+old_all_categories.value=SelObject.value;
+old_category.value=category;
+}
+function toggle(){
+    var plots=document.getElementById('plots');
+    var imagetype=document.getElementById('imagetype').value;
+    var plot_str='';
+    var category=document.getElementById('category');
+    var metric=document.getElementById('metric');
+    expansion_element=document.getElementById(arguments[0]);
+    rows=document.getElementsByName(arguments[0]);
+    if (expansion_element.innerHTML=='\u25B6'){
+        expansion_element.innerHTML='\u25BC'
+        show_row=arguments[0]+'_raw'+imagetype
+        
+        if (document.getElementById(show_row)==null){
+            img=document.createElement('img')
+            img.setAttribute('width',"600px") 
+            img.setAttribute('id',arguments[0]+'_raw'+imagetype)
+            img.setAttribute('style','position:absolute;z-index:0')
+            
+            plots.appendChild(img)
+        }else{
+            document.getElementById(arguments[0]+'_raw'+imagetype).style.display=''
+        }
+        for (var i=0, il=rows.length;i<il;i++){
+            rows[i].style.display='';
+        }
+    }else{
+        expansion_element.innerHTML='\u25B6'
+        document.getElementById(arguments[0]+'_raw'+imagetype).style.display='none'
+        for (var i=0, il=rows.length;i<il;i++){
+            rows[i].style.display='none';
+        }
+    }
+}
+
+function show_hide_categories(SelObject){
+    var all_categories=document.getElementById('all_categories').value.split('$#!')
+    var category=document.getElementById('category').value;
+    var imagetype=document.getElementById('imagetype').value;
+    var metric=document.getElementById('metric').value;
+    for (var i=1, il=all_categories.length; i<il; i++){
+        basename=metric+category+all_categories[i]
+        raw_image=basename+'_raw'+imagetype
+        ave_image=basename+'_ave'+imagetype
+        checkbox=document.getElementsByName(raw_image)
+        if (SelObject.value=='All'){
+            if (checkbox[0].checked==false){
+                checkbox[0].checked=true
+                document.getElementById(ave_image).style.display=''
+            }
+        }else if (SelObject.value=='None'){
+            if (checkbox[0].checked==true){
+                checkbox[0].checked=false
+                document.getElementById(ave_image).style.display='none'
+            }
+        }else if (SelObject.value=='Invert'){
+            if (checkbox[0].checked==true){
+                checkbox[0].checked=false
+                document.getElementById(ave_image).style.display='none'
+            }else if (checkbox[0].checked==false){
+                checkbox[0].checked=true
+                document.getElementById(ave_image).style.display=''
+            }
+        }
+    }
+    document.getElementById('show_category').selectedIndex=0;
+}
+</script>
+
+</head>
+<body>
+<form action=''>
+<input id="metric" type="hidden">
+<input id="category" type="hidden">
+<input id="imagetype" type="hidden" value=".png">
+<input id="all_categories" type="hidden">
+</form>
+<table><tr>
+<td><b>Select a Metric:</b></td>
+<td>
+<select onchange="javascript:changeMetric(this)">
+<option>&nbsp;</option>
+<option value="chao1">chao1</option>
+<option value="observed_species">observed_species</option>
+</select>
+</td>
+<td><b>&nbsp;&nbsp;Select a Category:</b></td>
+<td>
+<select onchange="javascript:changeCategory(this)">
+<option>&nbsp;</option>
+<option value="BarcodeSequence$#!col_1_row_2">BarcodeSequence</option>
+<option value="Description$#!col_3_row_0$#!col_3_row_2$#!col_3_row_1">Description</option>
+<option value="LinkerPrimerSequence$#!col_2_row_2">LinkerPrimerSequence</option>
+<option value="SampleID$#!col_0_row_0$#!col_0_row_2$#!col_0_row_1">SampleID</option>
+</select>
+</td>
+</table>
+<br>
+<div style="width:950px">
+<div id="plots" style="width:650px;height:550px;float:left;"></div>
+
+<div id="legend" style="width:300px;height:550px;float:right;display:none;">
+    <p><b>Show Categories: 
+    <select id="show_category" onchange="show_hide_categories(this);">
+        <option value="">&nbsp;</option>
+        <option value="All">All</option>
+        <option value="None">None</option>
+        <option value="Invert">Invert</option>
+    </select>
+    </b></p>
+<b>Legend</b><div STYLE="border: thin black solid; height: 300px; width: 200px; font-size: 12px; overflow: auto;"><table>
+<tr id="chao1BarcodeSequence" name="chao1BarcodeSequence" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_1_row_2')" id="chao1col_1_row_2" name="'sample1A','sample1B','sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>A</b></td></tr>
+<tr id="chao1col_1_row_2_raw" name="chao1col_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="chao1col_1_row_2_raw" name="chao1col_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="chao1col_1_row_2_raw" name="chao1col_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="chao1Description" name="chao1Description" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_3_row_0')" id="chao1col_3_row_0" name="'sample1A'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>1A</b></td></tr>
+<tr id="chao1col_3_row_0_raw" name="chao1col_3_row_0" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="chao1Description" name="chao1Description" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_3_row_1')" id="chao1col_3_row_1" name="'sample1B'">&#x25B6;</td><td>&nbsp;</td><td style="color:#0000ff">&#x25A0;&nbsp;</td><td class="data"><b>1B</b></td></tr>
+<tr id="chao1col_3_row_1_raw" name="chao1col_3_row_1" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="chao1Description" name="chao1Description" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_3_row_2')" id="chao1col_3_row_2" name="'sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#f27304">&#x25A0;&nbsp;</td><td class="data"><b>1C</b></td></tr>
+<tr id="chao1col_3_row_2_raw" name="chao1col_3_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="chao1LinkerPrimerSequence" name="chao1LinkerPrimerSequence" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_2_row_2')" id="chao1col_2_row_2" name="'sample1A','sample1B','sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>A</b></td></tr>
+<tr id="chao1col_2_row_2_raw" name="chao1col_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="chao1col_2_row_2_raw" name="chao1col_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="chao1col_2_row_2_raw" name="chao1col_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="chao1SampleID" name="chao1SampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_0_row_0')" id="chao1col_0_row_0" name="'sample1A'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>sample1A</b></td></tr>
+<tr id="chao1col_0_row_0_raw" name="chao1col_0_row_0" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="chao1SampleID" name="chao1SampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_0_row_1')" id="chao1col_0_row_1" name="'sample1B'">&#x25B6;</td><td>&nbsp;</td><td style="color:#0000ff">&#x25A0;&nbsp;</td><td class="data"><b>sample1B</b></td></tr>
+<tr id="chao1col_0_row_1_raw" name="chao1col_0_row_1" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="chao1SampleID" name="chao1SampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('chao1col_0_row_2')" id="chao1col_0_row_2" name="'sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#f27304">&#x25A0;&nbsp;</td><td class="data"><b>sample1C</b></td></tr>
+<tr id="chao1col_0_row_2_raw" name="chao1col_0_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="observed_speciesBarcodeSequence" name="observed_speciesBarcodeSequence" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_1_row_2')" id="observed_speciescol_1_row_2" name="'sample1A','sample1B','sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>A</b></td></tr>
+<tr id="observed_speciescol_1_row_2_raw" name="observed_speciescol_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="observed_speciescol_1_row_2_raw" name="observed_speciescol_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="observed_speciescol_1_row_2_raw" name="observed_speciescol_1_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="observed_speciesDescription" name="observed_speciesDescription" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_3_row_0')" id="observed_speciescol_3_row_0" name="'sample1A'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>1A</b></td></tr>
+<tr id="observed_speciescol_3_row_0_raw" name="observed_speciescol_3_row_0" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="observed_speciesDescription" name="observed_speciesDescription" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_3_row_1')" id="observed_speciescol_3_row_1" name="'sample1B'">&#x25B6;</td><td>&nbsp;</td><td style="color:#0000ff">&#x25A0;&nbsp;</td><td class="data"><b>1B</b></td></tr>
+<tr id="observed_speciescol_3_row_1_raw" name="observed_speciescol_3_row_1" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="observed_speciesDescription" name="observed_speciesDescription" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_3_row_2')" id="observed_speciescol_3_row_2" name="'sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#f27304">&#x25A0;&nbsp;</td><td class="data"><b>1C</b></td></tr>
+<tr id="observed_speciescol_3_row_2_raw" name="observed_speciescol_3_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="observed_speciesLinkerPrimerSequence" name="observed_speciesLinkerPrimerSequence" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_2_row_2')" id="observed_speciescol_2_row_2" name="'sample1A','sample1B','sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>A</b></td></tr>
+<tr id="observed_speciescol_2_row_2_raw" name="observed_speciescol_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="observed_speciescol_2_row_2_raw" name="observed_speciescol_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="observed_speciescol_2_row_2_raw" name="observed_speciescol_2_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+<tr id="observed_speciesSampleID" name="observed_speciesSampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_0_row_0')" id="observed_speciescol_0_row_0" name="'sample1A'">&#x25B6;</td><td>&nbsp;</td><td style="color:#ff0000">&#x25A0;&nbsp;</td><td class="data"><b>sample1A</b></td></tr>
+<tr id="observed_speciescol_0_row_0_raw" name="observed_speciescol_0_row_0" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#ff0000">&#x25C6;</td><td class="data" align="left"><b>sample1A</b></td></tr>
+<tr id="observed_speciesSampleID" name="observed_speciesSampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_0_row_1')" id="observed_speciescol_0_row_1" name="'sample1B'">&#x25B6;</td><td>&nbsp;</td><td style="color:#0000ff">&#x25A0;&nbsp;</td><td class="data"><b>sample1B</b></td></tr>
+<tr id="observed_speciescol_0_row_1_raw" name="observed_speciescol_0_row_1" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#0000ff">&#x25C6;</td><td class="data" align="left"><b>sample1B</b></td></tr>
+<tr id="observed_speciesSampleID" name="observed_speciesSampleID" style="display: none;"><td class="data" onmouseover="document.body.style.cursor='pointer'"  onmouseout="document.body.style.cursor='default'" onclick="toggle('observed_speciescol_0_row_2')" id="observed_speciescol_0_row_2" name="'sample1C'">&#x25B6;</td><td>&nbsp;</td><td style="color:#f27304">&#x25A0;&nbsp;</td><td class="data"><b>sample1C</b></td></tr>
+<tr id="observed_speciescol_0_row_2_raw" name="observed_speciescol_0_row_2" style="display: none;"><td class="data" align="right">&#x221F;</td><td></td><td style="color:#f27304">&#x25C6;</td><td class="data" align="left"><b>sample1C</b></td></tr>
+</table></div></div>
+<div style="position:relative;clear:both;">
+<table id="rare_data" border="1px">
+<tr name="LinkerPrimerSequence" style="display: none;"><td class="headers">LinkerPrimerSequence</td><td class="headers">Seqs/Sample</td>
+<td class="headers">chao1 Ave.</td><td class="headers">chao1 Err.</td>
+<td class="headers">observed_species Ave.</td><td class="headers">observed_species Err.</td>
+</tr>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">250000.0</td>
+<td class="data">220724.389</td><td class="data">  3187.110</td>
+<td class="data">119101.333</td><td class="data">   351.706</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">500000.0</td>
+<td class="data">343202.282</td><td class="data">  2839.548</td>
+<td class="data">170874.667</td><td class="data">   183.393</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">750000.0</td>
+<td class="data">391762.971</td><td class="data">  2304.796</td>
+<td class="data">210022.000</td><td class="data">   753.111</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1000000.0</td>
+<td class="data">431534.309</td><td class="data">  4196.230</td>
+<td class="data">241898.000</td><td class="data">   941.191</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1250000.0</td>
+<td class="data">477464.159</td><td class="data">  3256.433</td>
+<td class="data">269779.333</td><td class="data">  1072.232</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1500000.0</td>
+<td class="data">531778.991</td><td class="data">  5287.252</td>
+<td class="data">294029.667</td><td class="data">  1299.013</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1750000.0</td>
+<td class="data">595413.835</td><td class="data">  8739.050</td>
+<td class="data">316173.667</td><td class="data">  1796.365</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2000000.0</td>
+<td class="data">669038.014</td><td class="data"> 10051.227</td>
+<td class="data">336497.000</td><td class="data">  1830.695</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2250000.0</td>
+<td class="data">756186.015</td><td class="data"> 15389.341</td>
+<td class="data">355664.000</td><td class="data">  2100.330</td>
+<tr name="LinkerPrimerSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2500000.0</td>
+<td class="data">855903.123</td><td class="data"> 20520.271</td>
+<td class="data">374110.000</td><td class="data">  2275.406</td>
+</tr>
+<tr name="BarcodeSequence" style="display: none;"><td class="headers">BarcodeSequence</td><td class="headers">Seqs/Sample</td>
+<td class="headers">chao1 Ave.</td><td class="headers">chao1 Err.</td>
+<td class="headers">observed_species Ave.</td><td class="headers">observed_species Err.</td>
+</tr>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">250000.0</td>
+<td class="data">220724.389</td><td class="data">  3187.110</td>
+<td class="data">119101.333</td><td class="data">   351.706</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">500000.0</td>
+<td class="data">343202.282</td><td class="data">  2839.548</td>
+<td class="data">170874.667</td><td class="data">   183.393</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">750000.0</td>
+<td class="data">391762.971</td><td class="data">  2304.796</td>
+<td class="data">210022.000</td><td class="data">   753.111</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1000000.0</td>
+<td class="data">431534.309</td><td class="data">  4196.230</td>
+<td class="data">241898.000</td><td class="data">   941.191</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1250000.0</td>
+<td class="data">477464.159</td><td class="data">  3256.433</td>
+<td class="data">269779.333</td><td class="data">  1072.232</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1500000.0</td>
+<td class="data">531778.991</td><td class="data">  5287.252</td>
+<td class="data">294029.667</td><td class="data">  1299.013</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">1750000.0</td>
+<td class="data">595413.835</td><td class="data">  8739.050</td>
+<td class="data">316173.667</td><td class="data">  1796.365</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2000000.0</td>
+<td class="data">669038.014</td><td class="data"> 10051.227</td>
+<td class="data">336497.000</td><td class="data">  1830.695</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2250000.0</td>
+<td class="data">756186.015</td><td class="data"> 15389.341</td>
+<td class="data">355664.000</td><td class="data">  2100.330</td>
+<tr name="BarcodeSequence" style="display: none;">
+<td class="data" bgcolor="#ff0000">A</td><td class="data">2500000.0</td>
+<td class="data">855903.123</td><td class="data"> 20520.271</td>
+<td class="data">374110.000</td><td class="data">  2275.406</td>
+</tr>
+<tr name="Description" style="display: none;"><td class="headers">Description</td><td class="headers">Seqs/Sample</td>
+<td class="headers">chao1 Ave.</td><td class="headers">chao1 Err.</td>
+<td class="headers">observed_species Ave.</td><td class="headers">observed_species Err.</td>
+</tr>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">250000.0</td>
+<td class="data">223765.093</td><td class="data">       nan</td>
+<td class="data">118686.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">500000.0</td>
+<td class="data">346549.047</td><td class="data">       nan</td>
+<td class="data">170742.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">750000.0</td>
+<td class="data">394285.649</td><td class="data">       nan</td>
+<td class="data">210080.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">1000000.0</td>
+<td class="data">437275.759</td><td class="data">       nan</td>
+<td class="data">242554.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">1250000.0</td>
+<td class="data">482024.442</td><td class="data">       nan</td>
+<td class="data">270546.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">1500000.0</td>
+<td class="data">538479.245</td><td class="data">       nan</td>
+<td class="data">295480.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">1750000.0</td>
+<td class="data">605922.756</td><td class="data">       nan</td>
+<td class="data">318511.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">2000000.0</td>
+<td class="data">678309.154</td><td class="data">       nan</td>
+<td class="data">338844.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">2250000.0</td>
+<td class="data">763471.216</td><td class="data">       nan</td>
+<td class="data">358367.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#ff0000">1A</td><td class="data">2500000.0</td>
+<td class="data">857905.550</td><td class="data">       nan</td>
+<td class="data">376966.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">250000.0</td>
+<td class="data">222085.371</td><td class="data">       nan</td>
+<td class="data">119546.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">500000.0</td>
+<td class="data">339606.942</td><td class="data">       nan</td>
+<td class="data">171134.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">750000.0</td>
+<td class="data">388714.120</td><td class="data">       nan</td>
+<td class="data">210914.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">1000000.0</td>
+<td class="data">427363.842</td><td class="data">       nan</td>
+<td class="data">242573.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">1250000.0</td>
+<td class="data">475740.252</td><td class="data">       nan</td>
+<td class="data">270529.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">1500000.0</td>
+<td class="data">531303.320</td><td class="data">       nan</td>
+<td class="data">294281.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">1750000.0</td>
+<td class="data">595792.174</td><td class="data">       nan</td>
+<td class="data">315867.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">2000000.0</td>
+<td class="data">673733.852</td><td class="data">       nan</td>
+<td class="data">336270.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">2250000.0</td>
+<td class="data">770304.104</td><td class="data">       nan</td>
+<td class="data">355379.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#0000ff">1B</td><td class="data">2500000.0</td>
+<td class="data">879974.104</td><td class="data">       nan</td>
+<td class="data">373966.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">250000.0</td>
+<td class="data">216322.702</td><td class="data">       nan</td>
+<td class="data">119072.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">500000.0</td>
+<td class="data">343450.857</td><td class="data">       nan</td>
+<td class="data">170748.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">750000.0</td>
+<td class="data">392289.145</td><td class="data">       nan</td>
+<td class="data">209072.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">1000000.0</td>
+<td class="data">429963.325</td><td class="data">       nan</td>
+<td class="data">240567.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">1250000.0</td>
+<td class="data">474627.781</td><td class="data">       nan</td>
+<td class="data">268263.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">1500000.0</td>
+<td class="data">525554.409</td><td class="data">       nan</td>
+<td class="data">292328.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">1750000.0</td>
+<td class="data">584526.576</td><td class="data">       nan</td>
+<td class="data">314143.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">2000000.0</td>
+<td class="data">655071.034</td><td class="data">       nan</td>
+<td class="data">334377.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">2250000.0</td>
+<td class="data">734782.724</td><td class="data">       nan</td>
+<td class="data">353246.000</td><td class="data">       nan</td>
+<tr name="Description" style="display: none;">
+<td class="data" bgcolor="#f27304">1C</td><td class="data">2500000.0</td>
+<td class="data">829829.713</td><td class="data">       nan</td>
+<td class="data">371398.000</td><td class="data">       nan</td>
+</tr>
+<tr name="SampleID" style="display: none;"><td class="headers">SampleID</td><td class="headers">Seqs/Sample</td>
+<td class="headers">chao1 Ave.</td><td class="headers">chao1 Err.</td>
+<td class="headers">observed_species Ave.</td><td class="headers">observed_species Err.</td>
+</tr>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">250000.0</td>
+<td class="data">223765.093</td><td class="data">       nan</td>
+<td class="data">118686.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">500000.0</td>
+<td class="data">346549.047</td><td class="data">       nan</td>
+<td class="data">170742.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">750000.0</td>
+<td class="data">394285.649</td><td class="data">       nan</td>
+<td class="data">210080.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">1000000.0</td>
+<td class="data">437275.759</td><td class="data">       nan</td>
+<td class="data">242554.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">1250000.0</td>
+<td class="data">482024.442</td><td class="data">       nan</td>
+<td class="data">270546.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">1500000.0</td>
+<td class="data">538479.245</td><td class="data">       nan</td>
+<td class="data">295480.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">1750000.0</td>
+<td class="data">605922.756</td><td class="data">       nan</td>
+<td class="data">318511.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">2000000.0</td>
+<td class="data">678309.154</td><td class="data">       nan</td>
+<td class="data">338844.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">2250000.0</td>
+<td class="data">763471.216</td><td class="data">       nan</td>
+<td class="data">358367.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#ff0000">sample1A</td><td class="data">2500000.0</td>
+<td class="data">857905.550</td><td class="data">       nan</td>
+<td class="data">376966.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">250000.0</td>
+<td class="data">222085.371</td><td class="data">       nan</td>
+<td class="data">119546.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">500000.0</td>
+<td class="data">339606.942</td><td class="data">       nan</td>
+<td class="data">171134.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">750000.0</td>
+<td class="data">388714.120</td><td class="data">       nan</td>
+<td class="data">210914.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">1000000.0</td>
+<td class="data">427363.842</td><td class="data">       nan</td>
+<td class="data">242573.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">1250000.0</td>
+<td class="data">475740.252</td><td class="data">       nan</td>
+<td class="data">270529.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">1500000.0</td>
+<td class="data">531303.320</td><td class="data">       nan</td>
+<td class="data">294281.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">1750000.0</td>
+<td class="data">595792.174</td><td class="data">       nan</td>
+<td class="data">315867.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">2000000.0</td>
+<td class="data">673733.852</td><td class="data">       nan</td>
+<td class="data">336270.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">2250000.0</td>
+<td class="data">770304.104</td><td class="data">       nan</td>
+<td class="data">355379.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#0000ff">sample1B</td><td class="data">2500000.0</td>
+<td class="data">879974.104</td><td class="data">       nan</td>
+<td class="data">373966.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">250000.0</td>
+<td class="data">216322.702</td><td class="data">       nan</td>
+<td class="data">119072.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">500000.0</td>
+<td class="data">343450.857</td><td class="data">       nan</td>
+<td class="data">170748.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">750000.0</td>
+<td class="data">392289.145</td><td class="data">       nan</td>
+<td class="data">209072.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">1000000.0</td>
+<td class="data">429963.325</td><td class="data">       nan</td>
+<td class="data">240567.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">1250000.0</td>
+<td class="data">474627.781</td><td class="data">       nan</td>
+<td class="data">268263.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">1500000.0</td>
+<td class="data">525554.409</td><td class="data">       nan</td>
+<td class="data">292328.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">1750000.0</td>
+<td class="data">584526.576</td><td class="data">       nan</td>
+<td class="data">314143.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">2000000.0</td>
+<td class="data">655071.034</td><td class="data">       nan</td>
+<td class="data">334377.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">2250000.0</td>
+<td class="data">734782.724</td><td class="data">       nan</td>
+<td class="data">353246.000</td><td class="data">       nan</td>
+<tr name="SampleID" style="display: none;">
+<td class="data" bgcolor="#f27304">sample1C</td><td class="data">2500000.0</td>
+<td class="data">829829.713</td><td class="data">       nan</td>
+<td class="data">371398.000</td><td class="data">       nan</td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+</html>
