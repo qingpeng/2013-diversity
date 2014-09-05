@@ -15,7 +15,7 @@ alpha_diversity.py -i rarefied_otu_tables_alpha/ -m chao1,observed_species -o ad
 
 collate_alpha.py -i adiv_chao1_pd_alpha/ -o collated_alpha_alpha/
 
-make_rarefaction_plots.py -i collated_alpha_alpha/ -m sample1_ABC_Map.txt -o rare_plot_alpha
+make_rarefaction_plots.py -i collated_alpha_alpha/ -m e.coli_Map.txt -o rare_plot_alpha
 
 
 
