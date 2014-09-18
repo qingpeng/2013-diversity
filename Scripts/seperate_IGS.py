@@ -120,6 +120,7 @@ file_out2_o.write(to_print_IGS) # write header
 
 IGS_count = 0
 
+
 for line in file_in_o:
     line = line.rstrip()
     f1 = line.split()
@@ -132,7 +133,8 @@ for line in file_in_o:
     for freq in f2:
         sum_spectr = sum_spectr + int(freq)
         
-        
+    if sum_spectr == 0:
+        continue
         
     IGS_abundance =  sum_count/float(sum_spectr)
     file_out1_o.write(f1[0]+' '+str(IGS_abundance) + '\n')

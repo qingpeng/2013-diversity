@@ -39,12 +39,16 @@ for line in file_list_obj:
      ids.append(line)
 
 
-df = read_csv(file_igs,delim_whitespace=True,header=None)
-
+df = read_csv(file_igs,delim_whitespace=True,header=0) # with header!!
+# for GOS data, header=None
+# 
 data=[]
+
+
 for i in range(1,len(ids)+1):
-     data.append(df[i])
- 
+     data.append(df[list(df.columns.values)[i]])
+
+print(data)
  
  
 bc_dm = pw_distances(data, ids, "braycurtis")

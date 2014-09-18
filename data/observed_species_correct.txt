@@ -1,0 +1,23 @@
+	sequences per sample	iteration	sampleI	sampleJ
+alpha_rarefaction_20000_0.biom	20000	0	16850.0	16970.0
+alpha_rarefaction_40000_0.biom	40000	0	28782.0	29155.0
+alpha_rarefaction_60000_0.biom	60000	0	36881.0	37952.0
+alpha_rarefaction_80000_0.biom	80000	0	42893.0	44401.0
+alpha_rarefaction_100000_0.biom	100000	0	47115.0	48878.0
+alpha_rarefaction_120000_0.biom	120000	0	50062.0	52337.0
+alpha_rarefaction_140000_0.biom	140000	0	52180.0	54823.0
+alpha_rarefaction_160000_0.biom	160000	0	53649.0	56582.0
+alpha_rarefaction_180000_0.biom	180000	0	54676.0	58058.0
+alpha_rarefaction_200000_0.biom	200000	0	55360.0	58932.0
+alpha_rarefaction_220000_0.biom	220000	0	56018.0	59651.0
+alpha_rarefaction_240000_0.biom	240000	0	56357.0	60291.0
+alpha_rarefaction_260000_0.biom	260000	0	56640.0	60721.0
+alpha_rarefaction_280000_0.biom	280000	0	56824.0	61099.0
+alpha_rarefaction_300000_0.biom	300000	0	56977.0	61445.0
+alpha_rarefaction_320000_0.biom	320000	0	57073.0	61653.0
+alpha_rarefaction_340000_0.biom	340000	0	57154.0	61815.0
+alpha_rarefaction_360000_0.biom	360000	0	57230.0	61971.0
+alpha_rarefaction_380000_0.biom	380000	0	57231.0	62156.0
+alpha_rarefaction_400000_0.biom	400000	0	57282.0	62245.0
+alpha_rarefaction_420000_0.biom	420000	0	57310.0	62420.0
+alpha_rarefaction_440000_0.biom	440000	0	57339.0	62515.0

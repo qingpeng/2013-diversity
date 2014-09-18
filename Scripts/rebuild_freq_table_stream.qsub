@@ -1,0 +1,12 @@
+#!/bin/bash -login
+#PBS -l walltime=30:00:00,nodes=1:ppn=1,mem=5g
+#PBS -q main
+#PBS -M qingpeng@gmail.com
+#PBS -m abe
+#PBS -A ged-intel11
+
+
+cd $PBS_O_WORKDIR
+
+python /mnt/home/qingpeng/Dropbox/Manuscript/2013-diversity/scripts/rebuild_freq_table_stream.py ${list_file}
+
