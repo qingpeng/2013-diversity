@@ -1,10 +1,10 @@
-curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS052697.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS053214.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS058808.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS063603.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/throat/SRS014475.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/throat/SRS014689.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/tongue_dorsum/SRS011086.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS052697.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS053214.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS058808.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS063603.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/throat/SRS014475.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/throat/SRS014689.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/tongue_dorsum/SRS011086.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/tongue_dorsum/SRS014124.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/tongue_dorsum/SRS014271.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/tongue_dorsum/SRS015038.tar.bz2

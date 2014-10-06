@@ -1,11 +1,11 @@
 
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS021477.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS023595.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS023841.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS024021.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS024447.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS043018.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS047100.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS021477.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS023595.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS023841.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS024021.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS024447.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS043018.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS047100.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS047113.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS049268.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/supragingival_plaque/SRS052876.tar.bz2

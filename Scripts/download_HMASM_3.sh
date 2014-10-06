@@ -1,17 +1,17 @@
-
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS015073.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS015225.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS017497.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS019245.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS023850.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS044742.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS052330.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS052756.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS054962.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS056796.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS064376.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/right_retroauricular_crease/SRS019064.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS011302.tar.bz2
+# 
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS015073.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS015225.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS017497.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS019245.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS023850.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS044742.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS052330.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS052756.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS054962.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS056796.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/posterior_fornix/SRS064376.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/right_retroauricular_crease/SRS019064.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS011302.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS012273.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS013158.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS014313.tar.bz2

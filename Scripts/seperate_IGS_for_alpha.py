@@ -6,7 +6,7 @@ Get the list of IGSs for different samples seperately for alpha diversity analys
 
 Use '-h' for parameter help.
 
-There are two output files - *.IGS_abund and *.IGS
+There are two output files - *.IGS_abund.alpha and *.IGS.alpha
 
 Treat each IGSs in samples seperately.
 
@@ -68,7 +68,7 @@ The sample IDs in MAP file will be used as the header in .IGS file.
 0-0-0-4 18.75
 0-0-0-5 0.8
 1-0-0-0 27040.0
-1-0-0-1 34337.5
+1-0-0-1 34337.5 # 1-0-0-0
 1-0-0-2 11264.3333333
 1-0-0-3 801.25
 1-0-0-4 44.2
@@ -111,7 +111,7 @@ for line in file_map_o:
   line = line.rstrip()
   ID_list.append(line.split()[0])
 
-to_print_IGS = '#OTU ID'+'\t'+'\t'.join(ID_list)+'\n'
+to_print_IGS = '#OTU_ID'+'\t'+'\t'.join(ID_list)+'\n'
 file_out2_o.write(to_print_IGS) # write header
 
 n_sample = len(ID_list)
@@ -127,11 +127,11 @@ for line in file_in_o:
     f2 = f1[0].split('-')
     
     list_reads_number = f1[1:]
-    
+    # get number of reads with abundance in one sample
     for i in range(n_sample):
       empty_spec = ['0']*n_sample
       if int(list_reads_number[i]) > 0:
-        empty_spec[i] = f2[i]
+        empty_spec[i] = f2[i] # it's possible this is still 0
         spectrum = '-'.join(empty_spec)
         if spectrum in spectrum_count:
           spectrum_count[spectrum] += int(list_reads_number[i])
@@ -145,7 +145,9 @@ for spectrum in sorted_str:
   sum_spectr = 0
   for freq in spectrum.split('-'):
         sum_spectr = sum_spectr + int(freq)
-
+  if sum_spectr == 0:
+    continue
+    
   IGS_abundance = spectrum_count[spectrum]/float(sum_spectr) 
         
   file_out1_o.write(spectrum+' '+str(spectrum_count[spectrum])+' '+ str(IGS_abundance) + '\n')

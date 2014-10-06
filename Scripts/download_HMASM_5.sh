@@ -1,12 +1,12 @@
-curl -O http://downloads.hmpdacc.org/data/Illumina/attached_keratinized_gingiva/SRS019025.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS011090.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS011144.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013825.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013881.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013945.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS015374.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS053398.tar.bz2
-curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS056519.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/attached_keratinized_gingiva/SRS019025.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS011090.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS011144.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013825.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013881.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS013945.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/buccal_mucosa/SRS015374.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS053398.tar.bz2
+# curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS056519.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS057478.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS064276.tar.bz2
 curl -O http://downloads.hmpdacc.org/data/Illumina/stool/SRS075398.tar.bz2
