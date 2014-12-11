@@ -1,0 +1,68 @@
+ln -fs ../GS*.fa .
+
+python ~/Github/khmer/sandbox/correct-errors.py --ksize 20 --hashsize 1e8 e.coli_50x_0.01e_100.fa &
+/mnt/home/qingpeng/Github/khmer/sandbox/correct-errors.py --ksize 20 --hashsize 1e8 e.coli_50x_0.02e_100.fa &
+
+
+#!/bin/bash -login
+#PBS -l walltime=20:00:00,nodes=01:ppn=4,mem=110gb
+#PBS -q main
+#PBS -M qingpeng@gmail.com
+#PBS -m abe
+#PBS -A ged-intel11
+
+module load khmer
+module load screed
+cd $PBS_O_WORKDIR
+python get_comb_multi.py config-GOS.txt
+
+
+
+
+bash /mnt/home/qingpeng/Dropbox/Manuscript/2013-diversity/scripts/download_HMASM.csv.sh
+
+::::::::::::::
+../../HMASM/download_HMASM.csv.sh_split.qsub
+::::::::::::::
+#!/bin/bash -login
+#PBS -l walltime=20:00:00,nodes=1:ppn=1,mem=20g
+#PBS -q main
+#PBS -M qingpeng@gmail.com
+#PBS -m abe
+#PBS -A ged-intel11
+
+module load khmer
+
+cd $PBS_O_WORKDIR
+
+/mnt/home/qingpeng/Github/khmer/sandbox/correct-errors.py --ksize 20 --n_hashes 4 --hashsize 1e9 $QSUB
+
+
+
+[qingpeng@dev-intel14 Error_Correction]$ more ../../HMASM/*.sh
+#qsub -v QSUB="download_HMASM_1.sh" download_HMASM.csv.sh_split.qsub
+qsub -v QSUB="download_HMASM_2.sh" download_HMASM.csv.sh_split.qsub
+qsub -v QSUB="download_HMASM_3.sh" download_HMASM.csv.sh_split.qsub
+qsub -v QSUB="download_HMASM_4.sh" download_HMASM.csv.sh_split.qsub
+qsub -v QSUB="download_HMASM_5.sh" download_HMASM.csv.sh_split.
+
+
+qsub -v seqfile="V1.CD-3.trimmed.fa.gz" load-counting.qsub
+qsub -v seqfile="V1.CD-4.trimmed.fa.gz" load-counting.qsub
+qsub -v seqfile="V1.CD-6.trimmed.fa.gz" load-counting.qsub
+qsub -v seqfile="V1.CD-8.trimmed.fa.gz" load-counting.qsub
+qsub -v seqfile="V1.CD-9.trimmed.fa.gz" load-counting.qsub
+qsub -v seqfile="V1.UC-10.trimmed.fa.gz" load-counting.qsub
+
+
+
+/mnt/scratch/tg/qingpeng/MH_Data/Error_Correction
+ls *.gz |awk '{print "qsub -v seqfile=\""$1"\" correct_error.qsub" }' >correct_error.qsub.sh
+
+
+
+
+
+
+ftp://public-ftp.hmpdacc.org/Illumina/
+ftp://public-ftp.hmpdacc.org/Illumina/md5sum.txt
