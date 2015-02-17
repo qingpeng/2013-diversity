@@ -7,16 +7,17 @@
 \contentsline {paragraph}{Using IGS can get comparable cluster of samples:}{6}
 \contentsline {subsection}{\numberline {2.5}HMP metagenomics data set}{7}
 \contentsline {subsection}{\numberline {2.6}GPGC soil sample - new and old}{7}
-\contentsline {section}{\numberline {3}Discussion}{7}
-\contentsline {subsection}{\numberline {3.1}IGS can be the foundation of a new framework to do microbial diversity analysis}{7}
-\contentsline {subsection}{\numberline {3.2}IGS is promising to more problems}{7}
+\contentsline {subsection}{\numberline {2.7}iterated diversity analysis}{7}
+\contentsline {section}{\numberline {3}Discussion}{8}
+\contentsline {subsection}{\numberline {3.1}IGS can be the foundation of a new framework to do microbial diversity analysis}{8}
+\contentsline {subsection}{\numberline {3.2}IGS is promising to more problems}{8}
 \contentsline {subsection}{\numberline {3.3}Concluding thoughts}{10}
 \contentsline {section}{\numberline {4}Conclusion}{10}
-\contentsline {section}{\numberline {5}Methods}{10}
-\contentsline {subsection}{\numberline {5.1}Simulated data sets}{10}
-\contentsline {subsubsection}{\numberline {5.1.1}Four simulated reads data sets with different species abundance distribution}{10}
-\contentsline {subsubsection}{\numberline {5.1.2}Simulated sequencing reads of e.coli}{10}
-\contentsline {subsection}{\numberline {5.2}The concept of IGS(informational genomic segment)}{10}
+\contentsline {section}{\numberline {5}Methods}{11}
+\contentsline {subsection}{\numberline {5.1}Simulated data sets}{11}
+\contentsline {subsubsection}{\numberline {5.1.1}Four simulated reads data sets with different species abundance distribution}{11}
+\contentsline {subsubsection}{\numberline {5.1.2}Simulated sequencing reads of e.coli}{11}
+\contentsline {subsection}{\numberline {5.2}The concept of IGS(informational genomic segment)}{11}
 \contentsline {subsection}{\numberline {5.3}Using IGS to do alpha diversity analysis}{12}
-\contentsline {subsection}{\numberline {5.4}Using IGS to do beta diversity analysis}{12}
-\contentsline {section}{\numberline {6}Acknowledgments}{12}
+\contentsline {subsection}{\numberline {5.4}Using IGS to do beta diversity analysis}{13}
+\contentsline {section}{\numberline {6}Acknowledgments}{13}

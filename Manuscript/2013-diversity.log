@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  6 FEB 2015 15:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  16 FEB 2015 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -231,52 +231,50 @@ Package pdftex.def Info: ./figures/HMP_beta.png used on input line 301.
 File: ./figures/GPGC_1m_old.png Graphic file (type png)
 
 <use ./figures/GPGC_1m_old.png>
-Package pdftex.def Info: ./figures/GPGC_1m_old.png used on input line 317.
+Package pdftex.def Info: ./figures/GPGC_1m_old.png used on input line 320.
 (pdftex.def)             Requested size: 289.07999pt x 249.82843pt.
 
 <./figures/GPGC_old_subset1M.png, id=37, 477.785pt x 437.635pt>
 File: ./figures/GPGC_old_subset1M.png Graphic file (type png)
 
 <use ./figures/GPGC_old_subset1M.png>
-Package pdftex.def Info: ./figures/GPGC_old_subset1M.png used on input line 325
+Package pdftex.def Info: ./figures/GPGC_old_subset1M.png used on input line 328
 .
 (pdftex.def)             Requested size: 289.07999pt x 264.78668pt.
-
-Overfull \vbox (40.03789pt too high) has occurred while \output is active []
-
-
-[7 <./figures/GOS_cluster.png> <./figures/GOS_observed.png>] [8 <./figures/GOS_
-chao.png> <./figures/HMP_alpha.png>]
+ [7 <./figures/GOS_cluster.png> <./figures/GOS_observed.png>] [8 <./figures/GOS
+_chao.png> <./figures/HMP_alpha.png>]
 
 LaTeX Warning: Text page 9 contains only floats.
 
-[9 <./figures/HMP_beta.png> <./figures/GPGC_1m_old.png>]
+[9 <./figures/HMP_beta.png> <./figures/GPGC_1m_old.png>] [10 <./figures/GPGC_ol
+d_subset1M.png>]
+Overfull \hbox (26.46182pt too wide) in paragraph at lines 407--419
+[][] 
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./figures/GPGC_old_subset1M.png>] [11] [12] (./2013-diversity.aux)
+[11] [12] [13] (./2013-diversity.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1548 strings out of 493315
- 22859 string characters out of 6137904
- 82226 words of memory out of 5000000
- 4994 multiletter control sequences out of 15000+600000
+ 1550 strings out of 493315
+ 22887 string characters out of 6137904
+ 84235 words of memory out of 5000000
+ 4996 multiletter control sequences out of 15000+600000
  8502 words of font info for 30 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,7n,23p,1134b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,23p,1134b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on 2013-diversity.pdf (12 pages, 829745 bytes).
+Output written on 2013-diversity.pdf (13 pages, 831808 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
