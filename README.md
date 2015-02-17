@@ -1,5 +1,15 @@
 2013-diversity
 ==============
+Using the concept of informative genomic segment to investigate microbial diversity of metagenomics sample
+
+For a introduction:
+http://nbviewer.ipython.org/github/qingpeng/2013-diversity/blob/master/notebook/2013-diversity-summary.ipynb
+
+/Notebook/
+http://nbviewer.ipython.org/github/qingpeng/2013-diversity/tree/master/notebook/
+
+/Manuscript
+Manuscript
 
 General Repo
 
