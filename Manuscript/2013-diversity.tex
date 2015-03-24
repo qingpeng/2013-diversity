@@ -167,96 +167,26 @@ Data set & total number of IGSs \\
 \label{fig:IGS}
 \end{figure}
 
-\subsection{IGS can be used to do alpha diversity analysis}
+\subsection{Using IGS-based method to analyze the alpha diversity of simulated data sets }
 
-Basically the abundance distribution of IGSs with different coverage in a sample data set is acquired using the method shown above, like:
-
-    3 23
-    4 24
-    5 25
-    6 25
-    ...
-
-Here 23 IGSs with coverage as 3, this number is calculated from dividing the total number of reads with coverage as 3, which is 69, by the coverage 3: 69/3. Similarly there are 96/4 = 24 IGSs with coverage as 4.
-
-If we draw an analogy between IGSs and OTUs, this is like there are 23 different OTUs with 3 reads mapped to, and 24 different OTUs with 4 reads mapped to. 
-
-Then list all the different IGSs and the corrensponding count,and we can get a long list with each IGS and the corresponding coverage.The coverage of an IGS can be considered as the abundance of such IGS in a sample. The list looks like:
-
-%    #IGS_ID sample_ID
-%    1     3
-%    2     3
-%    3     3
-%    ...
-%    23    3
-%    24    4
-%    25    4
-%    ...
-%    47    4
-%    48    5
-%    ...
-    ...
-  
-This list is the counterpart of an OTU table in OTU based diversity analysis.
-
-With such table at hand, numerous existing statistical methods and software packages can be used to investigate the alpha diversity.  
-
-In the experiments shown below, QIIME package was used. 
+Here we use IGS to do alpha diversity analysis on the 6 simulated datasets. In this 
+experiment,we check if the IGS based method can do a good job in estimating 
+richness and evenness of the 6 data sets. 
 
 
+% compare using estimated genome size
+% also need rarefaction curve, using QIIME.  to show the final usage
 
 
 \subsection{IGS can be used to do beta diversity analysis}
 
-As in alpha diversity analysis, OTU table is also a cornestone for beta diversity analysis. As long as we get a reliable OTU table, there are existing pipelines to do the beta diversity analysis. 
 
-A typical OTU table across different samples is like this, which is also called samples-by-OTU data matrix.
+% compare the dissimilarity matrix 
+% still need clustering , and PCoA to show the final usage.
 
-%    OTU_ID Sample1_ID Sample2_ID Sample3_ID
-%   OTU1   3          4          2
-%    OTU2   2          5          0
-%    OTU3   3          1          4
-
-    
-Like a OTU table, we hope to have the IGS table for the IGSs:
-
-%    IGS_ID SampleA SampleB SampleC SampleD
-%    IGS1   5       1       2       1
-%    IGS2   5       1       2       1
-
-    
-    So now the problem is how we can generate a sample-by-IGS data matrix as the couterpart of samples-by-OTU data matrix so many of  the existing tools/methods used for OTU-based diversity can be borrowed for this kind of IGS-based analysis, just as what is shown above for alpha diversity analysis.
-
-Firstly, as how we get the coverage of a read from a sample dataset in this sample dataset, we can get the coverage of a read from a sample A dataset in another sample B dataset. We can still use the median k-mer count to represent the coverage. The basic idea is the same. 
-
-%Because a read must derive from a segment in the genome of some species in a sample, if a read R from sample A with a coverage C_A in sample A has a coverage as C_B in sample B, that means that segment of genome in sample A from which read R derive also exists in sample B. That genomic segment has a coverage as C_A in sample A and has a coverage as C_B in sample B. Roughly there should be about C_A reads (read R should be one of them) in sampleA covering that genomic segment and C_B reads in sampleB covering that genomic segment. Meanwhile, the C_A reads in sampleA should all have a coverage as C_B in sampleB, just like read R as one of them. Similary, the C_B reads in sampleB should all have a coverage as C_A in sampleA.
-
-Ok, now let's make an example. 
-
-Suppose there are 6 reads in sample A, all have a coverage as 3 in sampleA, and have a coverage as 2 in sampleB.
-
-According to the discussion about IGS in previous section, the 6 reads cover 2 IGSs with a coverage as 3 for each IGSs. There should be 4 reads in sampleB covering the exact same 2 IGSs, with a coverage as 2 in sampleB.
-
-So now we have 2 distinct IGSs with redundancy as 3 and 2 in the two samples respectively. 
-
-**Note:** small number is used in the analysis above as example, but it should be emphasized that the analysis is based on large number statistically.
+\subsection{ The influence of sequencing depth and error rate}
 
 
-Let's expand this example from 2 samples to 4 samples(A,B,C,D), as shown in figure above.
-
-Let's say we find 10 reads in sampleA, with coverage as 5-1-2-1 in samples A-B-C-D respectively. (We call "5-1-2-1" "coverage  spectrum" across samples.) So there should be **about** 2 reads in sampleB, 4 reads in sampleC, 2 reads in sampleD, all of which have a "coverage spectrum" as "5-1-2-1". Basically these 18 reads altogether cover 2 distinct IGSs, which apparently exist in all the 4 samples. The 2 distinct IGSs has a redundancy as 5,1,2,1 in the 4 samples respectively.
-
-If we draw an analogy between IGSs and OTUs, this is like there are 2 OTUs, both with 5,1,2,1 reads mapped to in sample A,B,C,D respectively.
-
-Like a OTU table, here we can have the IGS table for the two IGSs:
-%
-%    IGS_ID SampleA SampleB SampleC SampleD
-%    IGS1   5       1       2       1
-%    IGS2   5       1       2       1
-%    
-    
-    
- % should all include alpha and beta diversity results
     
 \subsection{GOS data sets: Sorcerer II Global Ocean Sampling Expedition}
 
@@ -485,6 +415,57 @@ In the experiments shown below, QIIME package was used.
 
 
 \subsection{Using IGS to do beta diversity analysis}
+
+
+As in alpha diversity analysis, OTU table is also a cornestone for beta diversity analysis. As long as we get a reliable OTU table, there are existing pipelines to do the beta diversity analysis. 
+
+A typical OTU table across different samples is like this, which is also called samples-by-OTU data matrix.
+
+%    OTU_ID Sample1_ID Sample2_ID Sample3_ID
+%   OTU1   3          4          2
+%    OTU2   2          5          0
+%    OTU3   3          1          4
+
+    
+Like a OTU table, we hope to have the IGS table for the IGSs:
+
+%    IGS_ID SampleA SampleB SampleC SampleD
+%    IGS1   5       1       2       1
+%    IGS2   5       1       2       1
+
+    
+    So now the problem is how we can generate a sample-by-IGS data matrix as the couterpart of samples-by-OTU data matrix so many of  the existing tools/methods used for OTU-based diversity can be borrowed for this kind of IGS-based analysis, just as what is shown above for alpha diversity analysis.
+
+Firstly, as how we get the coverage of a read from a sample dataset in this sample dataset, we can get the coverage of a read from a sample A dataset in another sample B dataset. We can still use the median k-mer count to represent the coverage. The basic idea is the same. 
+
+%Because a read must derive from a segment in the genome of some species in a sample, if a read R from sample A with a coverage C_A in sample A has a coverage as C_B in sample B, that means that segment of genome in sample A from which read R derive also exists in sample B. That genomic segment has a coverage as C_A in sample A and has a coverage as C_B in sample B. Roughly there should be about C_A reads (read R should be one of them) in sampleA covering that genomic segment and C_B reads in sampleB covering that genomic segment. Meanwhile, the C_A reads in sampleA should all have a coverage as C_B in sampleB, just like read R as one of them. Similary, the C_B reads in sampleB should all have a coverage as C_A in sampleA.
+
+Ok, now let's make an example. 
+
+Suppose there are 6 reads in sample A, all have a coverage as 3 in sampleA, and have a coverage as 2 in sampleB.
+
+According to the discussion about IGS in previous section, the 6 reads cover 2 IGSs with a coverage as 3 for each IGSs. There should be 4 reads in sampleB covering the exact same 2 IGSs, with a coverage as 2 in sampleB.
+
+So now we have 2 distinct IGSs with redundancy as 3 and 2 in the two samples respectively. 
+
+**Note:** small number is used in the analysis above as example, but it should be emphasized that the analysis is based on large number statistically.
+
+
+Let's expand this example from 2 samples to 4 samples(A,B,C,D), as shown in figure above.
+
+Let's say we find 10 reads in sampleA, with coverage as 5-1-2-1 in samples A-B-C-D respectively. (We call "5-1-2-1" "coverage  spectrum" across samples.) So there should be **about** 2 reads in sampleB, 4 reads in sampleC, 2 reads in sampleD, all of which have a "coverage spectrum" as "5-1-2-1". Basically these 18 reads altogether cover 2 distinct IGSs, which apparently exist in all the 4 samples. The 2 distinct IGSs has a redundancy as 5,1,2,1 in the 4 samples respectively.
+
+If we draw an analogy between IGSs and OTUs, this is like there are 2 OTUs, both with 5,1,2,1 reads mapped to in sample A,B,C,D respectively.
+
+Like a OTU table, here we can have the IGS table for the two IGSs:
+%
+%    IGS_ID SampleA SampleB SampleC SampleD
+%    IGS1   5       1       2       1
+%    IGS2   5       1       2       1
+%    
+    
+    
+ % should all include alpha and beta diversity results
 
 
 \section{Acknowledgments}
