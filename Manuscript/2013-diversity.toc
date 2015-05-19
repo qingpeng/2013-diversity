@@ -1,24 +1,27 @@
-\contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Results}{2}
-\contentsline {subsection}{\numberline {2.1}IGS(informative genomic segment) can represent the novel information of a genome}{2}
-\contentsline {subsection}{\numberline {2.2}Using IGS-based method to analyze the alpha diversity of simulated data sets }{3}
-\contentsline {subsection}{\numberline {2.3}IGS can be used to do beta diversity analysis}{4}
-\contentsline {subsection}{\numberline {2.4} The influence of sequencing depth and error rate}{4}
-\contentsline {subsection}{\numberline {2.5}GOS data sets: Sorcerer II Global Ocean Sampling Expedition}{4}
-\contentsline {paragraph}{Using IGS can get comparable cluster of samples:}{4}
-\contentsline {subsection}{\numberline {2.6}HMP metagenomics data set}{4}
-\contentsline {subsection}{\numberline {2.7}GPGC soil sample - new and old}{4}
-\contentsline {subsection}{\numberline {2.8}iterated diversity analysis}{5}
-\contentsline {section}{\numberline {3}Discussion}{6}
-\contentsline {subsection}{\numberline {3.1}IGS can be the foundation of a new framework to do microbial diversity analysis}{6}
-\contentsline {subsection}{\numberline {3.2}IGS is promising to more problems}{6}
-\contentsline {subsection}{\numberline {3.3}Concluding thoughts}{8}
-\contentsline {section}{\numberline {4}Conclusion}{8}
-\contentsline {section}{\numberline {5}Methods}{8}
-\contentsline {subsection}{\numberline {5.1}Simulated data sets}{8}
-\contentsline {subsubsection}{\numberline {5.1.1}Four simulated reads data sets with different species abundance distribution}{8}
-\contentsline {subsubsection}{\numberline {5.1.2}Simulated sequencing reads of e.coli}{8}
-\contentsline {subsection}{\numberline {5.2}The concept of IGS(informational genomic segment)}{9}
-\contentsline {subsection}{\numberline {5.3}Using IGS to do alpha diversity analysis}{11}
-\contentsline {subsection}{\numberline {5.4}Using IGS to do beta diversity analysis}{11}
-\contentsline {section}{\numberline {6}Acknowledgments}{12}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Results}{5}
+\contentsline {subsection}{\numberline {2.1}IGS(informative genomic segment) can represent the novel information of a genome}{5}
+\contentsline {subsection}{\numberline {2.2}Using a simple simulated data set to evaluate the IGS method}{6}
+\contentsline {subsection}{\numberline {2.3}Improving the accuracy of this method in real world analysis}{10}
+\contentsline {subsubsection}{\numberline {2.3.1}the effect of sequencing error to the accuracy of analysis}{12}
+\contentsline {subsubsection}{\numberline {2.3.2}the effect of Bloom filter size on the accuracy of analysis}{15}
+\contentsline {subsection}{\numberline {2.4}the effect of sequencing depth to the accuracy of IGS method}{18}
+\contentsline {subsection}{\numberline {2.5}Compare IGS method to COMMET in beta diversity analysis}{18}
+\contentsline {subsection}{\numberline {2.6}The IGS method can provide a whole framework to do alpha or Tbeta diversity, with good versatility.}{20}
+\contentsline {subsection}{\numberline {2.7}Applying IGS method to real metagenome data sets}{22}
+\contentsline {subsubsection}{\numberline {2.7.1}GOS data sets: Sorcerer II Global Ocean Sampling Expedition}{23}
+\contentsline {subsubsection}{\numberline {2.7.2}Human Microbiome Project(HMP) metagenomics data set}{24}
+\contentsline {subsubsection}{\numberline {2.7.3}GPGC - Great Prairie Soil Metagenome Grand Challenge}{25}
+\contentsline {subsubsection}{\numberline {2.7.4}More soil metagenomic samples}{27}
+\contentsline {section}{\numberline {3}Discussion}{27}
+\contentsline {section}{\numberline {4}Future work}{27}
+\contentsline {subsection}{\numberline {4.1}Concluding thoughts}{33}
+\contentsline {section}{\numberline {5}Conclusion}{36}
+\contentsline {section}{\numberline {6}Methods}{37}
+\contentsline {subsection}{\numberline {6.1}Code availability}{37}
+\contentsline {subsection}{\numberline {6.2}Simulated data sets}{38}
+\contentsline {subsubsection}{\numberline {6.2.1}Four simulated reads data sets with different species abundance distribution}{38}
+\contentsline {subsubsection}{\numberline {6.2.2}Simulated sequencing reads of e.coli}{38}
+\contentsline {subsection}{\numberline {6.3}Using IGS to analyze alpha diversity}{38}
+\contentsline {subsection}{\numberline {6.4}Using IGS to analyze beta diversity}{40}
+\contentsline {section}{\numberline {7}Acknowledgments}{43}

@@ -1,0 +1,37 @@
+
+
+
+# GPGC data
+
+# estimate number of unique k-mers
+
+[1]-  Terminated              /usr/bin/time -o hashbits.time python ~/Github/khmer/sandbox/optimal_args_hashbits.py --ksize 20 --n_table 1 --min-tablesize 20e9 wisconsin_restored.trimmed.fasta.gz
+[2]+  Terminated              /usr/bin/time -o HLL.time python ~/Github/khmer/sandbox/optimal_args_HLL.py --ksize 20 -R HLL.out wisconsin_restored.trimmed.fasta.gz
+
+
+
+# do error correction
+
+
+
+# error trimming - removing low abundance region
+
+
+
+
+# discard short reads. (they are useful for error correction, but not for
+# coverage analysis
+
+
+# get random subsets
+
+
+# run pipeline!
+
+
+# compare alpha, beta, seperation
+
+
+
+
+
