@@ -1,27 +1,23 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Results}{5}
-\contentsline {subsection}{\numberline {2.1}IGS(informative genomic segment) can represent the novel information of a genome}{5}
-\contentsline {subsection}{\numberline {2.2}Using a simple simulated data set to evaluate the IGS method}{6}
-\contentsline {subsection}{\numberline {2.3}Improving the accuracy of this method in real world analysis}{10}
-\contentsline {subsubsection}{\numberline {2.3.1}the effect of sequencing error to the accuracy of analysis}{12}
-\contentsline {subsubsection}{\numberline {2.3.2}the effect of Bloom filter size on the accuracy of analysis}{15}
-\contentsline {subsection}{\numberline {2.4}the effect of sequencing depth to the accuracy of IGS method}{18}
-\contentsline {subsection}{\numberline {2.5}Compare IGS method to COMMET in beta diversity analysis}{18}
-\contentsline {subsection}{\numberline {2.6}The IGS method can provide a whole framework to do alpha or Tbeta diversity, with good versatility.}{20}
-\contentsline {subsection}{\numberline {2.7}Applying IGS method to real metagenome data sets}{22}
-\contentsline {subsubsection}{\numberline {2.7.1}GOS data sets: Sorcerer II Global Ocean Sampling Expedition}{23}
-\contentsline {subsubsection}{\numberline {2.7.2}Human Microbiome Project(HMP) metagenomics data set}{24}
-\contentsline {subsubsection}{\numberline {2.7.3}GPGC - Great Prairie Soil Metagenome Grand Challenge}{25}
-\contentsline {subsubsection}{\numberline {2.7.4}More soil metagenomic samples}{27}
-\contentsline {section}{\numberline {3}Discussion}{27}
-\contentsline {section}{\numberline {4}Future work}{27}
-\contentsline {subsection}{\numberline {4.1}Concluding thoughts}{33}
-\contentsline {section}{\numberline {5}Conclusion}{36}
-\contentsline {section}{\numberline {6}Methods}{37}
-\contentsline {subsection}{\numberline {6.1}Code availability}{37}
-\contentsline {subsection}{\numberline {6.2}Simulated data sets}{38}
-\contentsline {subsubsection}{\numberline {6.2.1}Four simulated reads data sets with different species abundance distribution}{38}
-\contentsline {subsubsection}{\numberline {6.2.2}Simulated sequencing reads of e.coli}{38}
-\contentsline {subsection}{\numberline {6.3}Using IGS to analyze alpha diversity}{38}
-\contentsline {subsection}{\numberline {6.4}Using IGS to analyze beta diversity}{40}
-\contentsline {section}{\numberline {7}Acknowledgments}{43}
+\contentsline {subsection}{\numberline {2.1}reads can be used to interrogate De Bruijn graphs from multiple metagenomic samples}{5}
+\contentsline {subsection}{\numberline {2.2}We can generate read by sample matrices that let us use standard ecological measures}{5}
+\contentsline {subsection}{\numberline {2.3}Using IGS to analyze alpha diversity}{5}
+\contentsline {subsection}{\numberline {2.4}Using IGS to analyze beta diversity}{6}
+\contentsline {subsection}{\numberline {2.5}Using a simple simulated data set to evaluate the IGS method}{9}
+\contentsline {subsection}{\numberline {2.6}Applying IGS method to real metagenome data sets}{12}
+\contentsline {subsubsection}{\numberline {2.6.1}GOS data sets: Sorcerer II Global Ocean Sampling Expedition}{12}
+\contentsline {subsubsection}{\numberline {2.6.2}Human Microbiome Project(HMP) metagenomics data set}{14}
+\contentsline {subsubsection}{\numberline {2.6.3}ARMO (Amazon Rain Forest Microbial Observatory) soil metagenomic samples}{14}
+\contentsline {subsection}{\numberline {2.7}Compare IGS method to COMMET in beta diversity analysis}{15}
+\contentsline {section}{\numberline {3}Discussion}{17}
+\contentsline {subsection}{\numberline {3.1}The IGS method can provide a whole framework to do alpha or Tbeta diversity, with good versatility.}{17}
+\contentsline {section}{\numberline {4}Future work}{17}
+\contentsline {subsection}{\numberline {4.1}Concluding thoughts}{23}
+\contentsline {section}{\numberline {5}Conclusion}{25}
+\contentsline {section}{\numberline {6}Methods}{26}
+\contentsline {subsection}{\numberline {6.1}Code availability}{26}
+\contentsline {subsection}{\numberline {6.2}Simulated data sets}{26}
+\contentsline {subsubsection}{\numberline {6.2.1}Four simulated reads data sets with different species abundance distribution}{26}
+\contentsline {subsubsection}{\numberline {6.2.2}Simulated sequencing reads of e.coli}{26}
+\contentsline {section}{\numberline {7}Acknowledgments}{27}

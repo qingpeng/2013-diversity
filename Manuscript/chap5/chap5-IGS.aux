@@ -1,0 +1,111 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}The concept of IGS(informational genomic segment)}{1}}
+\citation{Alneberg2014}
+\citation{Imelfort2014}
+\citation{Brown2012}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}IGS(informative genomic segment) can represent the novel information of a genome}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \bf  Transforming reads into IGSs.}}{4}}
+\newlabel{fig:reads_to_IGS}{{1}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  \bf  {Total number of IGSs in different simulated reads data sets.} }}{5}}
+\newlabel{table:IGSs}{{1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \bf  IGS(informative genomic segment) can represent the novel information of a genome.}}{5}}
+\newlabel{fig:IGS}{{2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Using IGS to analyze alpha diversity}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \bf  Reads coverage distribution.}}{5}}
+\newlabel{table:read_coverage}{{2}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \bf  IGS abundance distribution.}}{6}}
+\newlabel{table:igs_coverage}{{3}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \bf  Listing IGSs with the corresponding abundances.}}{6}}
+\newlabel{table:igs_abundance}{{4}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Using IGS to analyze beta diversity}{6}}
+\citation{Imelfort2014}
+\citation{Albertsen2013}
+\citation{Karlsson2013}
+\citation{Alneberg2014}
+\citation{Nielsen2014}
+\citation{Imelfort2014}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \bf  Samples-by-OTU matrix.}}{7}}
+\newlabel{table:OTU_table}{{5}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \bf  Samples-by-IGS matrix.}}{7}}
+\newlabel{table:IGS_table}{{6}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \bf  Get the coverage of a read in samples. A read in sample A has the coverage of 5 in sample A, has the coverage of 8 in sample B.}}{8}}
+\newlabel{fig:read_coverage_samples}{{3}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \bf  From read coverage profile to IGS. (A): Get the coverage profile of one read. (B): Get the coverage profiles of all the reads in 3 samples. (C): Group the reads with same coverage profiles into ``super bin''. (D): Calculate the number of IGSs in each ``super bin''.}}{9}}
+\newlabel{fig:coverage_profile}{{4}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \bf  Samples-by-IGS matrix from example.}}{9}}
+\newlabel{table:sample_IGS_table}{{7}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Evaluating IGS method using simulated data sets}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Using a simple simulated data set to evaluate the IGS method}{9}}
+\citation{Mantel1967}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces  \bf  {Six synthetic simple metagenomes} }}{10}}
+\newlabel{table:simulated_metag}{{8}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \bf  Alpha diversity analysis result of the simple simulated data using IGS method.}}{10}}
+\newlabel{table:a_simulated}{{9}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \bf  Dissimilarity matrix between synthetic samples using Bray-curtis from species composition directly. }}{11}}
+\newlabel{table:simulated_real_matrix}{{10}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces \bf  Dissimilarity matrix between synthetic samples using Bray-Curtis from sequencing reads using IGS method. }}{11}}
+\newlabel{table:simulated_matrix1}{{11}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \bf  Ordination of the 6 synthetic samples using IGS method.}}{12}}
+\newlabel{fig:simple_pcoa}{{5}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Improving the accuracy of this method in real world analysis}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \bf  Clustering of the 6 synthetic samples using IGS method}}{13}}
+\newlabel{fig:simple_cluster}{{6}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \bf  Richness estimation using IGS method without adjustment.}}{14}}
+\newlabel{fig:IGS_richness_no_adjustment}{{7}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}the effect of sequencing error to the accuracy of analysis}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \bf  Beta diversity analysis using IGS method without adjustment.}}{15}}
+\newlabel{fig:beta_no_adjustment}{{8}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \bf  Richness estimation using IGS method without adjustment. }}{17}}
+\newlabel{fig:IGS_affected_k_kmers}{{9}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}the effect of Bloom filter size on the accuracy of analysis}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \bf  Richness estimation using IGS method adjusted by sequencing error rate.}}{18}}
+\newlabel{fig:IGS_richness_error_adjustment}{{10}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \bf  Richness estimation using IGS method adjusted by sequencing error rate and false positive rate of bloom filter.}}{19}}
+\newlabel{fig:IGS_richness_adjustment}{{11}{19}}
+\citation{DBLP:conf/bibm/MailletCVLP14}
+\citation{Maillet2012}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}the effect of sequencing depth to the accuracy of IGS method}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Compare IGS method to COMMET in beta diversity analysis}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \bf  Correlation between calculated distance matrix and true matrix from different data sets with different sequencing depth.}}{21}}
+\newlabel{fig:IGS_correlation_coverage}{{12}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \bf  Estimated genome size from data sets with variable coverage, without error.}}{22}}
+\newlabel{fig:alpha_by_coverage_0e}{{13}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}The IGS method can provide a whole framework to do alpha or Tbeta diversity, with good versatility.}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \bf  Estimated genome size from data sets with variable coverage, with error rate as 0.5\%.}}{23}}
+\newlabel{fig:alpha_by_coverage_0005e}{{14}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \bf  Estimated genome size from data sets with variable coverage, with error rate as 1.0\%. }}{24}}
+\newlabel{fig:alpha_by_coverage_001e}{{15}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Applying IGS method to real metagenome data sets}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \bf  Correlation between calculated distance matrix and true distance matrix from different data sets and using different methods.}}{25}}
+\newlabel{fig:compare_commet}{{16}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}GOS data sets: Sorcerer II Global Ocean Sampling Expedition}{25}}
+\citation{Human-Microbiome-Project-Consortium:2012aa}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Human Microbiome Project(HMP) metagenomics data set}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \bf  Clustering of Global Ocean Sampling Expedition samples using IGS method.}}{27}}
+\newlabel{fig:GOS-beta}{{17}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}GPGC - Great Prairie Soil Metagenome Grand Challenge}{27}}
+\citation{wilkinson1999disturbing}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \bf  Rarefaction curve of IGSs of Global Ocean Sampling Expedition samples.}}{28}}
+\newlabel{fig:GOS-rarefaction}{{18}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces \bf  Estimated number of IGSs of Global Ocean Sampling Expedition samples.}}{29}}
+\newlabel{fig:GOS-chao1}{{19}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}More soil metagenomic samples}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Data}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Code availability}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces \bf  Principal coordinates analysis of 12 Human Microbiome Project samples, red: anterior nares- skin, green: throat -oral, blue: buccal mucosa -oral, orange: posterior fornix -vaginal.}}{30}}
+\newlabel{fig:HMP_beta}{{20}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces \bf  Alpha diversity of 12 Human Microbiome Project samples: estimation of metagenome size of HMP samples, red: anterior nares- skin, green: throat -oral, blue: buccal mucosa -oral, orange: posterior fornix -vaginal.}}{31}}
+\newlabel{fig:HMP_alpha}{{21}{31}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces \bf  {GPGC data sets}}}{31}}
+\newlabel{table:gpgc}{{12}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces \bf  Principal coordinates analysis of 8 Great Prairie Soil Metagenome Grand Challenge (GPGC) samples.}}{32}}
+\newlabel{fig:GPGC_beta}{{22}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces \bf  Alpha diversity analysis of 8 GPGC samples. Upper left, rarefaction curve of IGSs. Upper right, estimated number of IGSs in different samples. Lower left, estimated number of IGSs in samples grouped by location (Iowa, Kansas and wisconsin). Lower right, estimated number of IGSs in samples grouped by treatment (corn, prairie, restored, switchgrass).}}{33}}
+\newlabel{fig:GPGC-alpha}{{23}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces \bf  Principal coordinates analysis of soil samples with different treatments collected from Kellogg Biological Station(KBS). Red, corn. Blue, miscanthus. Brown, switchgrass.}}{34}}
+\newlabel{fig:KBS_beta}{{24}{34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces \bf  Principal coordinates analysis of soil samples collected from Amazon rainforest. Red, forest samples. Blue, prairie samples.}}{35}}
+\newlabel{fig:ARMO_beta}{{25}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces \bf  Estimated number of IGSs in metagenomic data from soil samples collected from Amazon rainforest. Grouped by treatment. Red, forest samples. Blue, prairie samples.}}{36}}
+\newlabel{fig:ARMO_alpha}{{26}{36}}

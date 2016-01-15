@@ -1,0 +1,493 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 JAN 2016 16:46
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**chap5-IGS.tex
+(./chap5-IGS.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(./chap5-IGS.aux)
+\openout1 = `chap5-IGS.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks16
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 6.
+
+
+LaTeX Warning: No \author given.
+
+
+Overfull \hbox (6.1563pt too wide) in paragraph at lines 34--34
+[]\OT1/cmr/bx/n/14.4 The con-cept of IGS(informational ge-nomic seg-
+ []
+
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `Alneberg2014' on page 2 undefined on input line 53.
+
+
+LaTeX Warning: Citation `Imelfort2014' on page 2 undefined on input line 53.
+
+
+LaTeX Warning: Citation `Brown2012' on page 2 undefined on input line 104.
+
+[2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 118.
+ <./figures/from_reads_to_IGS.png, id=14, 685.56125pt x 797.98125pt>
+File: ./figures/from_reads_to_IGS.png Graphic file (type png)
+
+<use ./figures/from_reads_to_IGS.png>
+Package pdftex.def Info: ./figures/from_reads_to_IGS.png used on input line 152
+.
+(pdftex.def)             Requested size: 433.62pt x 504.73991pt.
+
+<./figures/IGSs_figure.pdf, id=16, 715.67375pt x 422.57875pt>
+File: ./figures/IGSs_figure.pdf Graphic file (type pdf)
+
+<use ./figures/IGSs_figure.pdf>
+Package pdftex.def Info: ./figures/IGSs_figure.pdf used on input line 181.
+(pdftex.def)             Requested size: 289.07999pt x 170.6921pt.
+ [3]
+
+LaTeX Warning: Text page 4 contains only floats.
+
+
+Overfull \vbox (4.68436pt too high) has occurred while \output is active []
+
+
+[4 <./figures/from_reads_to_IGS.png>] [5 <./figures/IGSs_figure.pdf>]
+<./figures/read_coverage_samples.png, id=47, 997.7275pt x 757.83125pt>
+File: ./figures/read_coverage_samples.png Graphic file (type png)
+
+<use ./figures/read_coverage_samples.png>
+Package pdftex.def Info: ./figures/read_coverage_samples.png used on input line
+ 329.
+(pdftex.def)             Requested size: 433.62pt x 329.35329pt.
+ [6]
+<./figures/coverage_profile.png, id=51, 1428.33624pt x 1077.02374pt>
+File: ./figures/coverage_profile.png Graphic file (type png)
+
+<use ./figures/coverage_profile.png>
+Package pdftex.def Info: ./figures/coverage_profile.png used on input line 349.
+
+(pdftex.def)             Requested size: 433.62pt x 326.97162pt.
+
+
+LaTeX Warning: Citation `Imelfort2014' on page 7 undefined on input line 361.
+
+
+LaTeX Warning: Citation `Albertsen2013' on page 7 undefined on input line 363.
+
+
+LaTeX Warning: Citation `Karlsson2013' on page 7 undefined on input line 363.
+
+
+LaTeX Warning: Citation `Alneberg2014' on page 7 undefined on input line 363.
+
+
+LaTeX Warning: Citation `Nielsen2014' on page 7 undefined on input line 363.
+
+
+LaTeX Warning: Citation `Imelfort2014' on page 7 undefined on input line 363.
+
+[7] [8 <./figures/read_coverage_samples.png>]
+Overfull \vbox (52.92155pt too high) has occurred while \output is active []
+
+
+[9 <./figures/coverage_profile.png>]
+Overfull \hbox (110.26076pt too wide) in paragraph at lines 430--446
+ [][] 
+ []
+
+
+Overfull \hbox (28.47284pt too wide) in paragraph at lines 462--478
+ [][] 
+ []
+
+
+Overfull \hbox (4.3894pt too wide) in paragraph at lines 500--511
+ [][] 
+ []
+
+
+Overfull \hbox (4.3894pt too wide) in paragraph at lines 517--528
+ [][] 
+ []
+
+
+LaTeX Warning: Citation `Mantel1967' on page 10 undefined on input line 542.
+
+[10] <./figures/simple_PCA_3d.png, id=67, 1096.095pt x 636.3775pt>
+File: ./figures/simple_PCA_3d.png Graphic file (type png)
+
+<use ./figures/simple_PCA_3d.png>
+Package pdftex.def Info: ./figures/simple_PCA_3d.png used on input line 554.
+(pdftex.def)             Requested size: 433.62pt x 251.75963pt.
+
+<./figures/simple_tree.png, id=68, 611.28375pt x 612.2875pt>
+File: ./figures/simple_tree.png Graphic file (type png)
+
+<use ./figures/simple_tree.png>
+Package pdftex.def Info: ./figures/simple_tree.png used on input line 561.
+(pdftex.def)             Requested size: 433.62pt x 434.32544pt.
+ [11] [12 <./figures/simple_PCA_3d.png>]
+<./figures/alpha_by_error_no_adjust.pdf, id=76, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_error_no_adjust.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_error_no_adjust.pdf>
+Package pdftex.def Info: ./figures/alpha_by_error_no_adjust.pdf used on input l
+ine 619.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+ [13 <./figures/simple_tree.png>]
+<./figures/beta_by_error.pdf, id=82, 722.7pt x 578.16pt>
+File: ./figures/beta_by_error.pdf Graphic file (type pdf)
+
+<use ./figures/beta_by_error.pdf>
+Package pdftex.def Info: ./figures/beta_by_error.pdf used on input line 625.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+ [14 <./figures/alpha_by_error_no_adjust.pdf>] [15 <./figures/beta_by_error.pdf
+>]
+<./figures/IGS_affected_k_kmers.png, id=174, 678.535pt x 508.90125pt>
+File: ./figures/IGS_affected_k_kmers.png Graphic file (type png)
+
+<use ./figures/IGS_affected_k_kmers.png>
+Package pdftex.def Info: ./figures/IGS_affected_k_kmers.png used on input line 
+683.
+(pdftex.def)             Requested size: 433.62pt x 325.21425pt.
+
+<./figures/alpha_by_error_erroronly_adjust.pdf, id=175, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_error_erroronly_adjust.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_error_erroronly_adjust.pdf>
+Package pdftex.def Info: ./figures/alpha_by_error_erroronly_adjust.pdf used on 
+input line 710.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+ [16] [17 <./figures/IGS_affected_k_kmers.png>] [18 <./figures/alpha_by_error_e
+rroronly_adjust.pdf>]
+<./figures/alpha_by_error_full_adjust.pdf, id=236, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_error_full_adjust.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_error_full_adjust.pdf>
+Package pdftex.def Info: ./figures/alpha_by_error_full_adjust.pdf used on input
+ line 758.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+ [19 <./figures/alpha_by_error_full_adjust.pdf>] <./figures/beta_by_coverage.pd
+f, id=287, 722.7pt x 578.16pt>
+File: ./figures/beta_by_coverage.pdf Graphic file (type pdf)
+
+<use ./figures/beta_by_coverage.pdf>
+Package pdftex.def Info: ./figures/beta_by_coverage.pdf used on input line 790.
+
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+<./figures/alpha_by_coverage_0e.pdf, id=288, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_coverage_0e.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_coverage_0e.pdf>
+Package pdftex.def Info: ./figures/alpha_by_coverage_0e.pdf used on input line 
+826.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+<./figures/alpha_by_coverage_0005e.pdf, id=289, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_coverage_0005e.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_coverage_0005e.pdf>
+Package pdftex.def Info: ./figures/alpha_by_coverage_0005e.pdf used on input li
+ne 833.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+<./figures/alpha_by_coverage_001e.pdf, id=290, 722.7pt x 578.16pt>
+File: ./figures/alpha_by_coverage_001e.pdf Graphic file (type pdf)
+
+<use ./figures/alpha_by_coverage_001e.pdf>
+Package pdftex.def Info: ./figures/alpha_by_coverage_001e.pdf used on input lin
+e 840.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+
+LaTeX Warning: Citation `DBLP:conf/bibm/MailletCVLP14' on page 20 undefined on 
+input line 851.
+
+
+LaTeX Warning: Citation `Maillet2012' on page 20 undefined on input line 852.
+
+[20] [21 <./figures/beta_by_coverage.pdf>]
+<./figures/compare_commet.pdf, id=335, 722.7pt x 578.16pt>
+File: ./figures/compare_commet.pdf Graphic file (type pdf)
+
+<use ./figures/compare_commet.pdf>
+Package pdftex.def Info: ./figures/compare_commet.pdf used on input line 876.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+ [22 <./figures/alpha_by_coverage_0e.pdf>]
+Overfull \hbox (32.9173pt too wide) in paragraph at lines 894--899
+[]\OT1/cmr/m/n/10 The other soft-ware pack-age to do metagenome com-par-i-son -
+ Com-pareads/COMMET
+ []
+
+
+Overfull \hbox (7.6728pt too wide) in paragraph at lines 900--900
+[]\OT1/cmr/bx/n/14.4 Applying IGS method to real metagenome data
+ []
+
+[23 <./figures/alpha_by_coverage_0005e.pdf>] [24 <./figures/alpha_by_coverage_0
+01e.pdf>] [25 <./figures/compare_commet.pdf>]
+<./figures/GOS_cluster.png, id=503, 779.91376pt x 570.13pt>
+File: ./figures/GOS_cluster.png Graphic file (type png)
+
+<use ./figures/GOS_cluster.png>
+Package pdftex.def Info: ./figures/GOS_cluster.png used on input line 971.
+(pdftex.def)             Requested size: 433.62pt x 316.98267pt.
+
+<./figures/GOS_observed.png, id=504, 850.17625pt x 473.77pt>
+File: ./figures/GOS_observed.png Graphic file (type png)
+
+<use ./figures/GOS_observed.png>
+Package pdftex.def Info: ./figures/GOS_observed.png used on input line 978.
+(pdftex.def)             Requested size: 433.62pt x 241.64119pt.
+
+<./figures/GOS_chao.png, id=505, 1146.2825pt x 580.1675pt>
+File: ./figures/GOS_chao.png Graphic file (type png)
+
+<use ./figures/GOS_chao.png>
+Package pdftex.def Info: ./figures/GOS_chao.png used on input line 985.
+(pdftex.def)             Requested size: 433.62pt x 219.46558pt.
+
+Overfull \hbox (6.78192pt too wide) in paragraph at lines 996--996
+[]\OT1/cmr/bx/n/12 Human Mi-cro-biome Project(HMP) metage-nomics data
+ []
+
+
+LaTeX Warning: Citation `Human-Microbiome-Project-Consortium:2012aa' on page 26
+ undefined on input line 1008.
+
+<./figures/HMP_beta.png, id=506, 461.725pt x 350.30875pt>
+File: ./figures/HMP_beta.png Graphic file (type png)
+
+<use ./figures/HMP_beta.png>
+Package pdftex.def Info: ./figures/HMP_beta.png used on input line 1013.
+(pdftex.def)             Requested size: 433.62pt x 328.98558pt.
+
+<./figures/HMP_alpha.png, id=507, 578.16pt x 433.62pt>
+File: ./figures/HMP_alpha.png Graphic file (type png)
+
+<use ./figures/HMP_alpha.png>
+Package pdftex.def Info: ./figures/HMP_alpha.png used on input line 1021.
+(pdftex.def)             Requested size: 433.62pt x 325.2142pt.
+ [26]
+Overfull \hbox (43.12846pt too wide) in paragraph at lines 1046--1058
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[27 <./figures/GOS_cluster.png>]
+
+LaTeX Warning: Citation `wilkinson1999disturbing' on page 28 undefined on input
+ line 1085.
+
+<./figures/GPGC_old_subset1M.png, id=515, 477.785pt x 437.635pt>
+File: ./figures/GPGC_old_subset1M.png Graphic file (type png)
+
+<use ./figures/GPGC_old_subset1M.png>
+Package pdftex.def Info: ./figures/GPGC_old_subset1M.png used on input line 110
+6.
+(pdftex.def)             Requested size: 433.62pt x 397.18002pt.
+ [28 <./figures/GOS_observed.png>]
+<./figures/GPGC_1m_old.png, id=520, 953.5625pt x 824.07875pt>
+File: ./figures/GPGC_1m_old.png Graphic file (type png)
+
+<use ./figures/GPGC_1m_old.png>
+Package pdftex.def Info: ./figures/GPGC_1m_old.png used on input line 1115.
+(pdftex.def)             Requested size: 433.62pt x 374.74265pt.
+
+<./figures/IGS_KBS_beta.png, id=521, 652.4375pt x 538.01pt>
+File: ./figures/IGS_KBS_beta.png Graphic file (type png)
+
+<use ./figures/IGS_KBS_beta.png>
+Package pdftex.def Info: ./figures/IGS_KBS_beta.png used on input line 1150.
+(pdftex.def)             Requested size: 433.62pt x 357.58334pt.
+
+<./figures/IGS_ARMO_beta.png, id=522, 631.35875pt x 510.90875pt>
+File: ./figures/IGS_ARMO_beta.png Graphic file (type png)
+
+<use ./figures/IGS_ARMO_beta.png>
+Package pdftex.def Info: ./figures/IGS_ARMO_beta.png used on input line 1158.
+(pdftex.def)             Requested size: 433.62pt x 350.89809pt.
+
+<./figures/IGS_ARMO_alpha.png, id=523, 851.18pt x 428.60126pt>
+File: ./figures/IGS_ARMO_alpha.png Graphic file (type png)
+
+<use ./figures/IGS_ARMO_alpha.png>
+Package pdftex.def Info: ./figures/IGS_ARMO_alpha.png used on input line 1166.
+(pdftex.def)             Requested size: 433.62pt x 218.34831pt.
+ [29 <./figures/GOS_chao.png>] [30 <./figures/HMP_beta.png>] [31 <./figures/HMP
+_alpha.png>] [32 <./figures/GPGC_old_subset1M.png>] [33 <./figures/GPGC_1m_old.
+png>] [34 <./figures/IGS_KBS_beta.png>]
+[35 <./figures/IGS_ARMO_beta.png>] [36 <./figures/IGS_ARMO_alpha.png>]
+(./chap5-IGS.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1670 strings out of 493089
+ 26566 string characters out of 6134842
+ 94566 words of memory out of 5000000
+ 5138 multiletter control sequences out of 15000+600000
+ 7895 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,13n,23p,471b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on chap5-IGS.pdf (36 pages, 1467300 bytes).
+PDF statistics:
+ 593 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+
